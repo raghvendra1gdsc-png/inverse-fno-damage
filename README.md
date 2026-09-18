@@ -331,7 +331,7 @@ The project runs natively on Python 3.10+ (tested on Python 3.14 on macOS Apple 
 
 ```bash
 # Clone the repository
-git clone https://github.com/raghvendrasingh5615-oss/inverse-fno-damage.git
+git clone https://github.com/raghvendra1gdsc-png/inverse-fno-damage.git
 cd inverse-fno-damage
 
 # Install dependencies
@@ -388,7 +388,7 @@ If you utilize this pipeline, dataset, or observability formulation in your rese
   author  = {Gahlot, Raghvendra Singh},
   journal = {Research Portfolio \& Graduate Internship Application, MBM University, Jodhpur},
   year    = {2026},
-  url     = {https://github.com/raghvendrasingh5615-oss/inverse-fno-damage}
+  url     = {https://github.com/raghvendra1gdsc-png/inverse-fno-damage}
 }
 ```
 
