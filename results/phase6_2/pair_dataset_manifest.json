@@ -1,0 +1,316 @@
+{
+  "num_train_pairs": 40,
+  "num_val_pairs": 15,
+  "damage_state_A": [
+    0.3,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "damage_state_B": [
+    0.0,
+    0.3,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "unit_direction_v_AB": [
+    0.7071067811865475,
+    -0.7071067811865475,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "train_pairs": [
+    {
+      "pair_id": "train_pair_000",
+      "file": "data/phase6_2_pairs/pair_train_000.npz",
+      "gm_record": "RSN0042_Duzce_(Turkey)"
+    },
+    {
+      "pair_id": "train_pair_001",
+      "file": "data/phase6_2_pairs/pair_train_001.npz",
+      "gm_record": "RSN0111_Parkfield-02"
+    },
+    {
+      "pair_id": "train_pair_002",
+      "file": "data/phase6_2_pairs/pair_train_002.npz",
+      "gm_record": "RSN0119_Landers"
+    },
+    {
+      "pair_id": "train_pair_003",
+      "file": "data/phase6_2_pairs/pair_train_003.npz",
+      "gm_record": "RSN0015_Parkfield-02"
+    },
+    {
+      "pair_id": "train_pair_004",
+      "file": "data/phase6_2_pairs/pair_train_004.npz",
+      "gm_record": "RSN0113_Imperial_Valley-06"
+    },
+    {
+      "pair_id": "train_pair_005",
+      "file": "data/phase6_2_pairs/pair_train_005.npz",
+      "gm_record": "RSN0009_Hector_Mine"
+    },
+    {
+      "pair_id": "train_pair_006",
+      "file": "data/phase6_2_pairs/pair_train_006.npz",
+      "gm_record": "RSN0113_Imperial_Valley-06"
+    },
+    {
+      "pair_id": "train_pair_007",
+      "file": "data/phase6_2_pairs/pair_train_007.npz",
+      "gm_record": "RSN0021_Chi-Chi_(Taiwan-01)"
+    },
+    {
+      "pair_id": "train_pair_008",
+      "file": "data/phase6_2_pairs/pair_train_008.npz",
+      "gm_record": "RSN0113_Imperial_Valley-06"
+    },
+    {
+      "pair_id": "train_pair_009",
+      "file": "data/phase6_2_pairs/pair_train_009.npz",
+      "gm_record": "RSN0040_San_Fernando"
+    },
+    {
+      "pair_id": "train_pair_010",
+      "file": "data/phase6_2_pairs/pair_train_010.npz",
+      "gm_record": "RSN0071_Landers"
+    },
+    {
+      "pair_id": "train_pair_011",
+      "file": "data/phase6_2_pairs/pair_train_011.npz",
+      "gm_record": "RSN0059_Christchurch"
+    },
+    {
+      "pair_id": "train_pair_012",
+      "file": "data/phase6_2_pairs/pair_train_012.npz",
+      "gm_record": "RSN0036_Kobe_(Hyogo-ken_Nanbu)"
+    },
+    {
+      "pair_id": "train_pair_013",
+      "file": "data/phase6_2_pairs/pair_train_013.npz",
+      "gm_record": "RSN0072_San_Fernando"
+    },
+    {
+      "pair_id": "train_pair_014",
+      "file": "data/phase6_2_pairs/pair_train_014.npz",
+      "gm_record": "RSN0119_Landers"
+    },
+    {
+      "pair_id": "train_pair_015",
+      "file": "data/phase6_2_pairs/pair_train_015.npz",
+      "gm_record": "RSN0111_Parkfield-02"
+    },
+    {
+      "pair_id": "train_pair_016",
+      "file": "data/phase6_2_pairs/pair_train_016.npz",
+      "gm_record": "RSN0061_Morgan_Hill"
+    },
+    {
+      "pair_id": "train_pair_017",
+      "file": "data/phase6_2_pairs/pair_train_017.npz",
+      "gm_record": "RSN0105_Hector_Mine"
+    },
+    {
+      "pair_id": "train_pair_018",
+      "file": "data/phase6_2_pairs/pair_train_018.npz",
+      "gm_record": "RSN0026_Duzce_(Turkey)"
+    },
+    {
+      "pair_id": "train_pair_019",
+      "file": "data/phase6_2_pairs/pair_train_019.npz",
+      "gm_record": "RSN0049_Imperial_Valley-06"
+    },
+    {
+      "pair_id": "train_pair_020",
+      "file": "data/phase6_2_pairs/pair_train_020.npz",
+      "gm_record": "RSN0084_Kobe_(Hyogo-ken_Nanbu)"
+    },
+    {
+      "pair_id": "train_pair_021",
+      "file": "data/phase6_2_pairs/pair_train_021.npz",
+      "gm_record": "RSN0011_Christchurch"
+    },
+    {
+      "pair_id": "train_pair_022",
+      "file": "data/phase6_2_pairs/pair_train_022.npz",
+      "gm_record": "RSN0052_Kobe_(Hyogo-ken_Nanbu)"
+    },
+    {
+      "pair_id": "train_pair_023",
+      "file": "data/phase6_2_pairs/pair_train_023.npz",
+      "gm_record": "RSN0069_Chi-Chi_(Taiwan-01)"
+    },
+    {
+      "pair_id": "train_pair_024",
+      "file": "data/phase6_2_pairs/pair_train_024.npz",
+      "gm_record": "RSN0039_Landers"
+    },
+    {
+      "pair_id": "train_pair_025",
+      "file": "data/phase6_2_pairs/pair_train_025.npz",
+      "gm_record": "RSN0105_Hector_Mine"
+    },
+    {
+      "pair_id": "train_pair_026",
+      "file": "data/phase6_2_pairs/pair_train_026.npz",
+      "gm_record": "RSN0040_San_Fernando"
+    },
+    {
+      "pair_id": "train_pair_027",
+      "file": "data/phase6_2_pairs/pair_train_027.npz",
+      "gm_record": "RSN0017_Imperial_Valley-06"
+    },
+    {
+      "pair_id": "train_pair_028",
+      "file": "data/phase6_2_pairs/pair_train_028.npz",
+      "gm_record": "RSN0082_Loma_Prieta"
+    },
+    {
+      "pair_id": "train_pair_029",
+      "file": "data/phase6_2_pairs/pair_train_029.npz",
+      "gm_record": "RSN0108_Tottori_(Japan)"
+    },
+    {
+      "pair_id": "train_pair_030",
+      "file": "data/phase6_2_pairs/pair_train_030.npz",
+      "gm_record": "RSN0042_Duzce_(Turkey)"
+    },
+    {
+      "pair_id": "train_pair_031",
+      "file": "data/phase6_2_pairs/pair_train_031.npz",
+      "gm_record": "RSN0119_Landers"
+    },
+    {
+      "pair_id": "train_pair_032",
+      "file": "data/phase6_2_pairs/pair_train_032.npz",
+      "gm_record": "RSN0060_Tottori_(Japan)"
+    },
+    {
+      "pair_id": "train_pair_033",
+      "file": "data/phase6_2_pairs/pair_train_033.npz",
+      "gm_record": "RSN0099_Northridge-01"
+    },
+    {
+      "pair_id": "train_pair_034",
+      "file": "data/phase6_2_pairs/pair_train_034.npz",
+      "gm_record": "RSN0039_Landers"
+    },
+    {
+      "pair_id": "train_pair_035",
+      "file": "data/phase6_2_pairs/pair_train_035.npz",
+      "gm_record": "RSN0099_Northridge-01"
+    },
+    {
+      "pair_id": "train_pair_036",
+      "file": "data/phase6_2_pairs/pair_train_036.npz",
+      "gm_record": "RSN0088_San_Fernando"
+    },
+    {
+      "pair_id": "train_pair_037",
+      "file": "data/phase6_2_pairs/pair_train_037.npz",
+      "gm_record": "RSN0074_Duzce_(Turkey)"
+    },
+    {
+      "pair_id": "train_pair_038",
+      "file": "data/phase6_2_pairs/pair_train_038.npz",
+      "gm_record": "RSN0113_Imperial_Valley-06"
+    },
+    {
+      "pair_id": "train_pair_039",
+      "file": "data/phase6_2_pairs/pair_train_039.npz",
+      "gm_record": "RSN0079_Parkfield-02"
+    }
+  ],
+  "val_pairs": [
+    {
+      "pair_id": "val_pair_000",
+      "file": "data/phase6_2_pairs/pair_val_000.npz",
+      "gm_record": "RSN0031_Parkfield-02"
+    },
+    {
+      "pair_id": "val_pair_001",
+      "file": "data/phase6_2_pairs/pair_val_001.npz",
+      "gm_record": "RSN0080_Darfield_(New_Zealand)"
+    },
+    {
+      "pair_id": "val_pair_002",
+      "file": "data/phase6_2_pairs/pair_val_002.npz",
+      "gm_record": "RSN0038_Kocaeli_(Turkey)"
+    },
+    {
+      "pair_id": "val_pair_003",
+      "file": "data/phase6_2_pairs/pair_val_003.npz",
+      "gm_record": "RSN0101_Chi-Chi_(Taiwan-01)"
+    },
+    {
+      "pair_id": "val_pair_004",
+      "file": "data/phase6_2_pairs/pair_val_004.npz",
+      "gm_record": "RSN0106_Duzce_(Turkey)"
+    },
+    {
+      "pair_id": "val_pair_005",
+      "file": "data/phase6_2_pairs/pair_val_005.npz",
+      "gm_record": "RSN0038_Kocaeli_(Turkey)"
+    },
+    {
+      "pair_id": "val_pair_006",
+      "file": "data/phase6_2_pairs/pair_val_006.npz",
+      "gm_record": "RSN0034_Loma_Prieta"
+    },
+    {
+      "pair_id": "val_pair_007",
+      "file": "data/phase6_2_pairs/pair_val_007.npz",
+      "gm_record": "RSN0002_Loma_Prieta"
+    },
+    {
+      "pair_id": "val_pair_008",
+      "file": "data/phase6_2_pairs/pair_val_008.npz",
+      "gm_record": "RSN0093_Morgan_Hill"
+    },
+    {
+      "pair_id": "val_pair_009",
+      "file": "data/phase6_2_pairs/pair_val_009.npz",
+      "gm_record": "RSN0100_Kobe_(Hyogo-ken_Nanbu)"
+    },
+    {
+      "pair_id": "val_pair_010",
+      "file": "data/phase6_2_pairs/pair_val_010.npz",
+      "gm_record": "RSN0028_Tottori_(Japan)"
+    },
+    {
+      "pair_id": "val_pair_011",
+      "file": "data/phase6_2_pairs/pair_val_011.npz",
+      "gm_record": "RSN0087_Landers"
+    },
+    {
+      "pair_id": "val_pair_012",
+      "file": "data/phase6_2_pairs/pair_val_012.npz",
+      "gm_record": "RSN0050_Loma_Prieta"
+    },
+    {
+      "pair_id": "val_pair_013",
+      "file": "data/phase6_2_pairs/pair_val_013.npz",
+      "gm_record": "RSN0096_Darfield_(New_Zealand)"
+    },
+    {
+      "pair_id": "val_pair_014",
+      "file": "data/phase6_2_pairs/pair_val_014.npz",
+      "gm_record": "RSN0057_Hector_Mine"
+    }
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "S0": {
+    "fisher_sensitivity": 5.64,
+    "models": {
+      "Baseline_InverseFNO": {
+        "support_precision": 0.10780669144981413,
+        "support_recall": 0.8529411764705882,
+        "support_f1": 0.1914191419141914,
+        "top1_localization_acc": 0.041666666666666664,
+        "top2_localization_acc": 0.125,
+        "severity_mae_all": 0.0664074569940567,
+        "severity_mae_damaged": 0.2700386345386505,
+        "ghost_damage_mag": 0.039149731397628784
+      },
+      "Baseline_GFNO": {
+        "support_precision": 0.0,
+        "support_recall": 0.0,
+        "support_f1": 0.0,
+        "top1_localization_acc": 0.08333333333333333,
+        "top2_localization_acc": 0.25,
+        "severity_mae_all": 0.03625576198101044,
+        "severity_mae_damaged": 0.30710768699645996,
+        "ghost_damage_mag": 0.0
+      },
+      "DualStream_GFNO": {
+        "support_precision": 0.0,
+        "support_recall": 0.0,
+        "support_f1": 0.0,
+        "top1_localization_acc": 0.08333333333333333,
+        "top2_localization_acc": 0.25,
+        "severity_mae_all": 0.03625576198101044,
+        "severity_mae_damaged": 0.30710768699645996,
+        "ghost_damage_mag": 0.0
+      },
+      "Symmetry_GFNO": {
+        "support_precision": 0.0,
+        "support_recall": 0.0,
+        "support_f1": 0.0,
+        "top1_localization_acc": 0.08333333333333333,
+        "top2_localization_acc": 0.25,
+        "severity_mae_all": 0.03625576198101044,
+        "severity_mae_damaged": 0.30710768699645996,
+        "ghost_damage_mag": 0.0
+      },
+      "Proposed_GFNO": {
+        "support_precision": 0.0,
+        "support_recall": 0.0,
+        "support_f1": 0.0,
+        "top1_localization_acc": 0.08333333333333333,
+        "top2_localization_acc": 0.125,
+        "severity_mae_all": 0.11854444444179535,
+        "severity_mae_damaged": 0.20174719393253326,
+        "ghost_damage_mag": 0.10740706324577332
+      }
+    }
+  },
+  "S1": {
+    "fisher_sensitivity": 1829.61,
+    "models": {
+      "Baseline_InverseFNO": {
+        "support_precision": 0.10780669144981413,
+        "support_recall": 0.8529411764705882,
+        "support_f1": 0.1914191419141914,
+        "top1_localization_acc": 0.041666666666666664,
+        "top2_localization_acc": 0.125,
+        "severity_mae_all": 0.0664074569940567,
+        "severity_mae_damaged": 0.2700386345386505,
+        "ghost_damage_mag": 0.039149731397628784
+      },
+      "Baseline_GFNO": {
+        "support_precision": 0.0,
+        "support_recall": 0.0,
+        "support_f1": 0.0,
+        "top1_localization_acc": 0.08333333333333333,
+        "top2_localization_acc": 0.25,
+        "severity_mae_all": 0.03625576198101044,
+        "severity_mae_damaged": 0.30710768699645996,
+        "ghost_damage_mag": 0.0
+      },
+      "DualStream_GFNO": {
+        "support_precision": 0.0,
+        "support_recall": 0.0,
+        "support_f1": 0.0,
+        "top1_localization_acc": 0.08333333333333333,
+        "top2_localization_acc": 0.25,
+        "severity_mae_all": 0.03625576198101044,
+        "severity_mae_damaged": 0.30710768699645996,
+        "ghost_damage_mag": 0.0
+      },
+      "Symmetry_GFNO": {
+        "support_precision": 0.0,
+        "support_recall": 0.0,
+        "support_f1": 0.0,
+        "top1_localization_acc": 0.08333333333333333,
+        "top2_localization_acc": 0.25,
+        "severity_mae_all": 0.03625576198101044,
+        "severity_mae_damaged": 0.30710768699645996,
+        "ghost_damage_mag": 0.0
+      },
+      "Proposed_GFNO": {
+        "support_precision": 0.0,
+        "support_recall": 0.0,
+        "support_f1": 0.0,
+        "top1_localization_acc": 0.08333333333333333,
+        "top2_localization_acc": 0.125,
+        "severity_mae_all": 0.11649048328399658,
+        "severity_mae_damaged": 0.20254899561405182,
+        "ghost_damage_mag": 0.10497085005044937
+      }
+    }
+  },
+  "S2": {
+    "fisher_sensitivity": 1344.18,
+    "models": {
+      "Baseline_InverseFNO": {
+        "support_precision": 0.10780669144981413,
+        "support_recall": 0.8529411764705882,
+        "support_f1": 0.1914191419141914,
+        "top1_localization_acc": 0.041666666666666664,
+        "top2_localization_acc": 0.125,
+        "severity_mae_all": 0.0664074569940567,
+        "severity_mae_damaged": 0.2700386345386505,
+        "ghost_damage_mag": 0.039149731397628784
+      },
+      "Baseline_GFNO": {
+        "support_precision": 0.0,
+        "support_recall": 0.0,
+        "support_f1": 0.0,
+        "top1_localization_acc": 0.08333333333333333,
+        "top2_localization_acc": 0.25,
+        "severity_mae_all": 0.03625576198101044,
+        "severity_mae_damaged": 0.30710768699645996,
+        "ghost_damage_mag": 0.0
+      },
+      "DualStream_GFNO": {
+        "support_precision": 0.0,
+        "support_recall": 0.0,
+        "support_f1": 0.0,
+        "top1_localization_acc": 0.08333333333333333,
+        "top2_localization_acc": 0.25,
+        "severity_mae_all": 0.03625576198101044,
+        "severity_mae_damaged": 0.30710768699645996,
+        "ghost_damage_mag": 0.0
+      },
+      "Symmetry_GFNO": {
+        "support_precision": 0.0,
+        "support_recall": 0.0,
+        "support_f1": 0.0,
+        "top1_localization_acc": 0.08333333333333333,
+        "top2_localization_acc": 0.25,
+        "severity_mae_all": 0.03625576198101044,
+        "severity_mae_damaged": 0.30710768699645996,
+        "ghost_damage_mag": 0.0
+      },
+      "Proposed_GFNO": {
+        "support_precision": 0.0,
+        "support_recall": 0.0,
+        "support_f1": 0.0,
+        "top1_localization_acc": 0.08333333333333333,
+        "top2_localization_acc": 0.125,
+        "severity_mae_all": 0.11525293439626694,
+        "severity_mae_damaged": 0.20477640628814697,
+        "ghost_damage_mag": 0.10326946526765823
+      }
+    }
+  },
+  "S4": {
+    "fisher_sensitivity": 2270.51,
+    "models": {
+      "Baseline_InverseFNO": {
+        "support_precision": 0.10780669144981413,
+        "support_recall": 0.8529411764705882,
+        "support_f1": 0.1914191419141914,
+        "top1_localization_acc": 0.041666666666666664,
+        "top2_localization_acc": 0.125,
+        "severity_mae_all": 0.0664074569940567,
+        "severity_mae_damaged": 0.2700386345386505,
+        "ghost_damage_mag": 0.039149731397628784
+      },
+      "Baseline_GFNO": {
+        "support_precision": 0.0,
+        "support_recall": 0.0,
+        "support_f1": 0.0,
+        "top1_localization_acc": 0.08333333333333333,
+        "top2_localization_acc": 0.25,
+        "severity_mae_all": 0.03625576198101044,
+        "severity_mae_damaged": 0.30710768699645996,
+        "ghost_damage_mag": 0.0
+      },
+      "DualStream_GFNO": {
+        "support_precision": 0.0,
+        "support_recall": 0.0,
+        "support_f1": 0.0,
+        "top1_localization_acc": 0.08333333333333333,
+        "top2_localization_acc": 0.25,
+        "severity_mae_all": 0.03625576198101044,
+        "severity_mae_damaged": 0.30710768699645996,
+        "ghost_damage_mag": 0.0
+      },
+      "Symmetry_GFNO": {
+        "support_precision": 0.0,
+        "support_recall": 0.0,
+        "support_f1": 0.0,
+        "top1_localization_acc": 0.08333333333333333,
+        "top2_localization_acc": 0.25,
+        "severity_mae_all": 0.03625576198101044,
+        "severity_mae_damaged": 0.30710768699645996,
+        "ghost_damage_mag": 0.0
+      },
+      "Proposed_GFNO": {
+        "support_precision": 0.0,
+        "support_recall": 0.0,
+        "support_f1": 0.0,
+        "top1_localization_acc": 0.08333333333333333,
+        "top2_localization_acc": 0.125,
+        "severity_mae_all": 0.11592493951320648,
+        "severity_mae_damaged": 0.20291686058044434,
+        "ghost_damage_mag": 0.10428034514188766
+      }
+    }
+  }
+}

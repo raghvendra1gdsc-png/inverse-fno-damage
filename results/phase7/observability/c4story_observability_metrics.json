@@ -1,0 +1,91 @@
+{
+  "gate": "GATE_B_C4STORY_OBSERVABILITY",
+  "structure": "C_4story",
+  "num_stories": 4,
+  "num_nodes": 10,
+  "num_elements": 12,
+  "noise_model": "2% Channel-wise RMS Gaussian Whitening",
+  "ground_motion": "RSN0001_Imperial_Valley-06",
+  "results": {
+    "S0": {
+      "num_channels": 4,
+      "sigma_max": 932.7523646001513,
+      "sigma_min": 0.06911178849419838,
+      "condition_number": 13496.284569143389,
+      "directional_fisher_sqrt_I_AB": 1.9140928937273791,
+      "v_null_smallest_mode_proj": 0.0010547232120997193,
+      "singular_values": [
+        932.7523646001513,
+        369.1988596766407,
+        198.23066389047253,
+        151.83274876721865,
+        111.56239343545352,
+        76.01667472604176,
+        73.1767907525967,
+        1.621523064939623,
+        1.1880432122770825,
+        0.8611568987502219,
+        0.46872209415476734,
+        0.06911178849419838
+      ],
+      "execution_time_s": 0.3881232738494873,
+      "gate_decision": "F1_PHYSICALLY_NON_OBSERVABLE"
+    },
+    "S1": {
+      "num_channels": 12,
+      "sigma_max": 3048.56628135415,
+      "sigma_min": 35.483694595937074,
+      "condition_number": 85.91456769282459,
+      "directional_fisher_sqrt_I_AB": 1297.883786122503,
+      "v_null_smallest_mode_proj": 9.840507996602575e-07,
+      "singular_values": [
+        3048.56628135415,
+        1374.0923590268862,
+        1249.4675018941598,
+        849.5146319979127,
+        541.6695016236872,
+        528.0548916322739,
+        420.5024122070107,
+        250.47401456194,
+        228.76566334372876,
+        168.92917041245332,
+        68.106394408851,
+        35.483694595937074
+      ],
+      "execution_time_s": 0.3460359573364258,
+      "gate_decision": "PASS"
+    },
+    "S4": {
+      "num_channels": 24,
+      "sigma_max": 3887.5456827520834,
+      "sigma_min": 241.71642856249997,
+      "condition_number": 16.08308423995637,
+      "directional_fisher_sqrt_I_AB": 1639.0793001207087,
+      "v_null_smallest_mode_proj": 5.100905961151112e-06,
+      "singular_values": [
+        3887.5456827520834,
+        1796.6171035880354,
+        1700.0586011897549,
+        1405.714126550267,
+        1138.1642103668312,
+        1097.6535092788258,
+        1026.7960904692113,
+        1003.2558863393408,
+        924.5113641452493,
+        617.4987458396166,
+        264.1789750059229,
+        241.71642856249997
+      ],
+      "execution_time_s": 0.36354613304138184,
+      "gate_decision": "PASS"
+    }
+  },
+  "overall_gate_decision": "PASS",
+  "inverse_evaluation_authorized_modalities": [
+    "S1",
+    "S4"
+  ],
+  "f1_classified_modalities": [
+    "S0"
+  ]
+}

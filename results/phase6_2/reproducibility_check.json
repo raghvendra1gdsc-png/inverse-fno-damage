@@ -1,0 +1,10 @@
+{
+  "sensor_config": "S2",
+  "condition": "Cond_D_DirAndMargin",
+  "seed": 42,
+  "original_bilateral_accuracy": 0.5,
+  "reproduced_bilateral_accuracy": 0.5,
+  "original_cosine_alignment": 0.10467883526968459,
+  "reproduced_cosine_alignment": 0.10467883526968459,
+  "is_reproducible": true
+}

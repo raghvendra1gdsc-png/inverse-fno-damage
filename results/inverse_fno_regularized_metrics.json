@@ -1,0 +1,27 @@
+{
+  "overall": {
+    "num_test_samples": 32,
+    "overall_mae": 0.05043812096118927,
+    "overall_rmse": 0.10817334800958633,
+    "healthy_samples": 8,
+    "damaged_samples": 24
+  },
+  "localization": {
+    "top1_accuracy_pct": 16.666666666666664,
+    "top1_error_rate_pct": 83.33333333333334,
+    "top2_accuracy_pct": 29.166666666666668,
+    "mean_story_localization_error": 0.75
+  },
+  "severity": {
+    "mean_severity_error_on_damaged_elements": 0.28714194893836975,
+    "mean_false_positive_damage_on_intact_elements": 0.01939297467470169,
+    "mean_false_positive_on_healthy_records": 0.018011948093771935
+  },
+  "config": {
+    "lambda_data": 1.0,
+    "lambda_sparse": 0.02,
+    "lambda_tv": 0.0,
+    "lambda_cycle": 0.01,
+    "epochs": 35
+  }
+}

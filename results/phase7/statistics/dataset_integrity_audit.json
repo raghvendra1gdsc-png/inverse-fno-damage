@@ -1,0 +1,83 @@
+{
+  "audit_verdict": "PASS",
+  "checks": {
+    "check_1_total_files": {
+      "expected": 530,
+      "actual": 530,
+      "status": "PASS"
+    },
+    "check_2_unique_earthquakes": {
+      "count": 120,
+      "expected": 120,
+      "status": "PASS"
+    },
+    "check_3_disjointness": {
+      "train_val_overlap": 0,
+      "train_test_overlap": 0,
+      "val_test_overlap": 0,
+      "status": "PASS"
+    },
+    "check_4_partition_sizes": {
+      "train_gms": 70,
+      "val_gms": 20,
+      "test_gms": 30,
+      "status": "PASS"
+    },
+    "check_5_no_nans_infs": {
+      "nan_inf_detected": false,
+      "status": "PASS"
+    },
+    "check_6_no_test_structures_in_training": {
+      "structures_in_train": [
+        "B_train_2",
+        "B_train_3",
+        "B_train_1",
+        "B_train_4",
+        "SOURCE_A"
+      ],
+      "forbidden_in_train": [],
+      "status": "PASS"
+    },
+    "check_7_c4story_dimensions": {
+      "sample_count": 60,
+      "all_10_nodes_12_elements": true,
+      "status": "PASS"
+    },
+    "check_8_simulation_counts": {
+      "actual": {
+        "train_P1": 70,
+        "train_P1_pair": 20,
+        "train_P2_diversity": 140,
+        "val_standard": 40,
+        "val_pair": 20,
+        "test_L1_ID": 60,
+        "test_L2A_interp": 60,
+        "test_L2B_extrap": 60,
+        "test_L3_topology": 60
+      },
+      "expected": {
+        "train_P1": 70,
+        "train_P1_pair": 20,
+        "train_P2_diversity": 140,
+        "val_standard": 40,
+        "val_pair": 20,
+        "test_L1_ID": 60,
+        "test_L2A_interp": 60,
+        "test_L2B_extrap": 60,
+        "test_L3_topology": 60
+      },
+      "status": "PASS"
+    }
+  },
+  "counts_actual": {
+    "train_P1": 70,
+    "train_P1_pair": 20,
+    "train_P2_diversity": 140,
+    "val_standard": 40,
+    "val_pair": 20,
+    "test_L1_ID": 60,
+    "test_L2A_interp": 60,
+    "test_L2B_extrap": 60,
+    "test_L3_topology": 60
+  }
+}

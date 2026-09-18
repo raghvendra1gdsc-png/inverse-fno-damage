@@ -1,0 +1,99 @@
+{
+  "manifest_name": "Phase 7 Structural Split & Manifold Definition",
+  "parameter_manifold": "Restricted 2D Structural Parameter Manifold (mu_m, mu_k)",
+  "reference_structure": {
+    "structure_id": "SOURCE_A",
+    "floor_mass_kg": 10000.0,
+    "I_col_m4": 1.0e-4,
+    "I_beam_m4": 3.0e-4,
+    "mu_m": 1.0,
+    "mu_k": 1.0,
+    "f1_Hz": 2.1856
+  },
+  "training_structural_envelope": {
+    "description": "Convex hull formed by 4 parameter corners + SOURCE_A center",
+    "bounding_box": {
+      "mu_m_range": [0.90, 1.10],
+      "mu_k_range": [0.90, 1.10]
+    },
+    "structures": [
+      {"id": "SOURCE_A", "mu_m": 1.00, "mu_k": 1.00, "f1_Hz": 2.1856, "df1_pct": 0.0},
+      {"id": "B_train_1", "mu_m": 0.90, "mu_k": 0.90, "f1_Hz": 2.1872, "df1_pct": 0.07},
+      {"id": "B_train_2", "mu_m": 1.10, "mu_k": 1.10, "f1_Hz": 2.1841, "df1_pct": -0.07},
+      {"id": "B_train_3", "mu_m": 0.90, "mu_k": 1.10, "f1_Hz": 2.4140, "df1_pct": 10.45},
+      {"id": "B_train_4", "mu_m": 1.10, "mu_k": 0.90, "f1_Hz": 1.9785, "df1_pct": -9.48}
+    ]
+  },
+  "interpolation_test_set": {
+    "description": "Strictly inside the training convex hull [0.90, 1.10]^2 but exact combinations withheld from training",
+    "structures": [
+      {
+        "id": "B_int_1",
+        "mu_m": 0.95,
+        "mu_k": 1.05,
+        "f1_Hz": 2.2982,
+        "df1_pct": 5.15,
+        "is_inside_hull": true,
+        "convex_weights": "0.5 * B_train_3 + 0.5 * SOURCE_A",
+        "present_in_training": false
+      },
+      {
+        "id": "B_int_2",
+        "mu_m": 1.05,
+        "mu_k": 0.95,
+        "f1_Hz": 2.0784,
+        "df1_pct": -4.90,
+        "is_inside_hull": true,
+        "convex_weights": "0.5 * B_train_4 + 0.5 * SOURCE_A",
+        "present_in_training": false
+      }
+    ]
+  },
+  "extrapolation_test_set": {
+    "description": "Strictly outside the training envelope in parameter distance and modal frequency",
+    "structures": [
+      {
+        "id": "B_ext_soft",
+        "mu_m": 1.50,
+        "mu_k": 0.80,
+        "f1_Hz": 1.5984,
+        "df1_pct": -26.87,
+        "param_distance_from_source": 0.5385,
+        "envelope_boundary_distance": 0.1414,
+        "extrapolation_ratio": 3.81,
+        "is_inside_hull": false,
+        "present_in_training": false
+      },
+      {
+        "id": "B_ext_stiff",
+        "mu_m": 0.65,
+        "mu_k": 1.30,
+        "f1_Hz": 3.0843,
+        "df1_pct": 41.12,
+        "param_distance_from_source": 0.4610,
+        "envelope_boundary_distance": 0.1414,
+        "extrapolation_ratio": 3.26,
+        "is_inside_hull": false,
+        "present_in_training": false
+      }
+    ]
+  },
+  "topological_ood_set": {
+    "description": "Graph cardinality and size change: 4-story, 1-bay frame (10 nodes, 12 members)",
+    "structures": [
+      {
+        "id": "C_4story",
+        "num_stories": 4,
+        "num_bays": 1,
+        "num_nodes": 10,
+        "num_elements": 12,
+        "floor_mass_kg": 10000.0,
+        "I_col_m4": 1.0e-4,
+        "I_beam_m4": 3.0e-4,
+        "f1_Hz": 1.6492,
+        "df1_pct": -24.54,
+        "present_in_training": false
+      }
+    ]
+  }
+}

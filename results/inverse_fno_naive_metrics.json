@@ -1,0 +1,20 @@
+{
+  "overall": {
+    "num_test_samples": 32,
+    "overall_mae": 0.04582912474870682,
+    "overall_rmse": 0.11195578426122665,
+    "healthy_samples": 8,
+    "damaged_samples": 24
+  },
+  "localization": {
+    "top1_accuracy_pct": 12.5,
+    "top1_error_rate_pct": 87.5,
+    "top2_accuracy_pct": 25.0,
+    "mean_story_localization_error": 0.875
+  },
+  "severity": {
+    "mean_severity_error_on_damaged_elements": 0.291675329208374,
+    "mean_false_positive_damage_on_intact_elements": 0.015104848891496658,
+    "mean_false_positive_on_healthy_records": 0.008532145991921425
+  }
+}

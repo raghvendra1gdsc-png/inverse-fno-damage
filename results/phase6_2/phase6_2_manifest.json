@@ -1,0 +1,51 @@
+{
+  "phase": "6.2",
+  "description": "Targeted Bilateral Identifiability Learning",
+  "configs": [
+    "S0",
+    "S1",
+    "S2",
+    "S4"
+  ],
+  "conditions": [
+    "Cond_A_Baseline",
+    "Cond_B_Paired",
+    "Cond_C_Directional",
+    "Cond_D_DirAndMargin"
+  ],
+  "frozen_thresholds": {
+    "S0": {
+      "frozen_tau": 0.35,
+      "validation_support_f1": 0.2828282828282828
+    },
+    "S1": {
+      "frozen_tau": 0.45,
+      "validation_support_f1": 0.29268292682926833
+    },
+    "S2": {
+      "frozen_tau": 0.25,
+      "validation_support_f1": 0.2681564245810056
+    },
+    "S4": {
+      "frozen_tau": 0.25,
+      "validation_support_f1": 0.2909090909090909
+    }
+  },
+  "reproducibility": {
+    "sensor_config": "S2",
+    "condition": "Cond_D_DirAndMargin",
+    "seed": 42,
+    "original_bilateral_accuracy": 0.5,
+    "reproduced_bilateral_accuracy": 0.5,
+    "original_cosine_alignment": 0.10467883526968459,
+    "reproduced_cosine_alignment": 0.10467883526968459,
+    "is_reproducible": true
+  },
+  "figures": [
+    "reports/figures/phase6_2/fig1_bilateral_confusion.png",
+    "reports/figures/phase6_2/fig2_directional_alignment.png",
+    "reports/figures/phase6_2/fig3_predicted_separation.png",
+    "reports/figures/phase6_2/fig4_sensor_comparison.png",
+    "reports/figures/phase6_2/fig5_support_metrics.png"
+  ]
+}

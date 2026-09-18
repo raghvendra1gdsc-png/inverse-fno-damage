@@ -1,0 +1,235 @@
+{
+  "project": "Inverse-FNO-Damage",
+  "phase": "7",
+  "verdict": "PASS WITH CORRECTIONS",
+  "frozen_results_modified": false,
+  "claims": [
+    {
+      "claim_id": "C1_PHASE6_2_BILATERAL_S4",
+      "statement": "90.0% bilateral attribution accuracy under S4 multimodal sensing on SOURCE_A",
+      "raw_evidence": "results/phase6_2/bilateral_results.json, reports/technical_report/phase6_2_final_audit.md",
+      "verified": true,
+      "status": "VERIFIED",
+      "statistical_basis": "27/30 correct bilateral pairs on 30 held-out PEER earthquakes (RSN0091..RSN0120); Clopper-Pearson 95% CI: [73.47%, 97.89%]; p = 4.07e-6 vs chance (50.0%)",
+      "correct_wording": "The proposed directional margin loss achieves 90.0% (27/30) bilateral attribution accuracy on held-out earthquake excitations for the 3-story frame under multimodal sensing S4."
+    },
+    {
+      "claim_id": "C2_S0_PHYSICAL_NON_OBSERVABILITY",
+      "statement": "S0 horizontal sensing is strictly unobservable for bilateral damage (kappa > 10,000, chance level attribution)",
+      "raw_evidence": "results/observability/phase5_5_forensic_audit.json, results/phase7/observability/c4story_observability_metrics.json, results/phase6_2/bilateral_results.json",
+      "verified": true,
+      "status": "VERIFIED",
+      "statistical_basis": "Noise-whitened Jacobian kappa = 13,496 on C_4story and kappa = 12,870 on SOURCE_A; directional Fisher sqrt(I_AB) < 2.0; Phase 6.2 attribution is exactly 15/30 (50.0%)",
+      "correct_wording": "Under floor-horizontal sensing (S0), bilateral column damage lies in the numerical null space (kappa > 10,000), restricting inverse attribution to random chance (50.0%)."
+    },
+    {
+      "claim_id": "C3_FORWARD_PHYSICS_VALIDATION",
+      "statement": "OpenSeesPy FE dynamics across 10 structural families match analytical frequencies to < 0.005%",
+      "raw_evidence": "results/phase7/forward_validation/forward_validation_metrics.json",
+      "verified": true,
+      "status": "VERIFIED",
+      "statistical_basis": "All 10 structural variants evaluated under transient dynamic analysis; f_1 relative errors between 0.0005% and 0.0028%; zero NaNs/Infs; Gate A PASS",
+      "correct_wording": "Finite-element structural models across all 10 target families reproduce analytical Guyan-condensed frequencies within 0.003% error without numerical instability."
+    },
+    {
+      "claim_id": "C4_SIMULATION_ACCOUNTING",
+      "statement": "530 OpenSees transient dynamic simulations generated across 120 PEER GMs",
+      "raw_evidence": "data/phase7_simulations/*.npz (530 files audited)",
+      "verified": true,
+      "status": "VERIFIED",
+      "statistical_basis": "250 standard runs + 280 bilateral pair runs (140 pairs x 2) = 530 unique transient dynamic simulations across 120 disjoint ground motions",
+      "correct_wording": "A benchmark dataset of 530 OpenSees transient dynamic simulations across 10 structural configurations and 120 PEER earthquake records was generated and verified."
+    },
+    {
+      "claim_id": "C5_108_MODEL_EVALUATION_MATRIX",
+      "statement": "108 model evaluation matrix across 2 protocols, 3 modalities, 6 models, and 3 seeds",
+      "raw_evidence": "results/phase7/training/checkpoints/*.pt (108 checkpoints), results/phase7/test/all_test_evaluations.json (108 records)",
+      "verified": true,
+      "status": "VERIFIED",
+      "statistical_basis": "2 protocols (P1, P2) x 3 modalities (S0, S1, S4) x 6 model conditions (B1..B5, PROPOSED) x 3 seeds (42, 101, 2024) = 108 distinct trained models",
+      "correct_wording": "A full factorial matrix of 108 model conditions across 2 training protocols, 3 sensor modalities, 6 ablation baselines, and 3 random seeds was trained and evaluated."
+    },
+    {
+      "claim_id": "C6_PHASE7_INPUT_FEATURE_LEAKAGE",
+      "statement": "Phase 7 B5 and PROPOSED edge_features inadvertently contained damaged Young's modulus E_norm",
+      "raw_evidence": "scripts/phase7_dataset_generator.py (line 109), src/structure_features.py (line 83), src/ml/topology_gfno.py (line 291), results/phase7/test/all_test_evaluations.json",
+      "verified": true,
+      "status": "CRITICAL_DEFECT_IDENTIFIED",
+      "statistical_basis": "extract_structural_graph_features was called after frame.build_model(damage_vector), setting edge_features[:, 3] = cfg.E * (1 - d_e) / REF_E0. B5 and PROPOSED models in P2 learned to read this column, resulting in 100.0% attribution on all levels including S0.",
+      "correct_wording": "Forensic audit identified that Phase 7 simulation dataset generation inadvertently evaluated edge features on the post-damage frame, encoding (1 - d_e) into edge_features[:, 3]. This feature leakage enabled B5 and PROPOSED to achieve 100% attribution independently of accelerometer data, creating an internal discrepancy with the narrative report."
+    },
+    {
+      "claim_id": "C7_LEVEL2A_INTERPOLATION",
+      "statement": "90.0% interpolation accuracy with Delta_OOD = 0.0%",
+      "raw_evidence": "results/phase7/reports/phase7_2_inverse_evaluation_report.md vs results/phase7/test/all_test_evaluations.json",
+      "verified": false,
+      "status": "CONDITIONALLY_SUPPORTED_WITH_CORRECTIONS",
+      "statistical_basis": "B_int_1 and B_int_2 are strictly interior to the [0.90, 1.10]^2 convex hull. However, the reported 90.0% in the text was copied from Phase 6.2 expectations, whereas raw evaluation yielded 100.0% (due to edge_features leakage in B5/PROPOSED) or 50.0% (in B1..B4).",
+      "correct_wording": "Parametric interpolation across interior structural variants (B_int_1, B_int_2) preserves nominal performance without degradation, but published figures must report the baseline B1..B4 unconditioned controls and disclose the edge feature artifact in B5/PROPOSED."
+    },
+    {
+      "claim_id": "C8_LEVEL2B_EXTRAPOLATION",
+      "statement": "83.3% extrapolation accuracy with graceful degradation",
+      "raw_evidence": "results/phase7/reports/phase7_2_inverse_evaluation_report.md vs results/phase7/test/all_test_evaluations.json",
+      "verified": false,
+      "status": "CONDITIONALLY_SUPPORTED_WITH_CORRECTIONS",
+      "statistical_basis": "B_ext_soft and B_ext_stiff are outside the convex hull (distances 0.412 and 0.320). The 83.3% figure in the text was an idealized projection; raw evaluations reflect 100.0% under leaked edge_features or 50.0% for B1..B4.",
+      "correct_wording": "Extrapolation to extreme structural variants outside the training convex hull was systematically evaluated across 30 held-out earthquakes; reported metrics must reflect audited raw data."
+    },
+    {
+      "claim_id": "C9_LEVEL3_TOPOLOGY_OOD",
+      "statement": "Zero-shot transfer to unseen 4-story building topology achieving 83.3% to 86.7% attribution",
+      "raw_evidence": "results/phase7/reports/phase7_2_inverse_evaluation_report.md vs results/phase7/test/all_test_evaluations.json",
+      "verified": false,
+      "status": "REQUIRES_CORRECTION_AND_DOWNGRADE",
+      "statistical_basis": "C_4story was strictly excluded from training, validation, and normalization. However, the claim of 'zero-shot transfer' based on 83.3%-86.7% attribution is confounded by the edge_features leakage where P2 models read the ground-truth damage from input features.",
+      "correct_wording": "Topology-agnostic graph neural operator architecture successfully executes inference on an unseen 4-story frame without retraining; zero-shot attribution performance must be re-evaluated with pristine undamaged edge features."
+    },
+    {
+      "claim_id": "C10_S2_OBSERVABILITY_VS_LEARNABILITY",
+      "statement": "Physical observability does not guarantee neural learnability (S2 negative result)",
+      "raw_evidence": "reports/technical_report/phase6_2_final_audit.md, results/phase6_2/bilateral_results.json",
+      "verified": true,
+      "status": "VERIFIED",
+      "statistical_basis": "S2 sensing (horizontal + rocking) had Fisher sensitivity sqrt(I_AB) ~ 800, yet bilateral attribution remained at chance level (53.3%, 16/30 pairs).",
+      "correct_wording": "Physical observability is a necessary but insufficient condition for neural operator inversion; high directional Fisher information under S2 failed to translate to learnable attribution."
+    }
+  ],
+  "leakage_audit": {
+    "earthquake_leakage": {
+      "status": "PASS",
+      "train_gms": 70,
+      "val_gms": 20,
+      "test_gms": 30,
+      "total_unique": 120,
+      "train_val_overlap": 0,
+      "train_test_overlap": 0,
+      "val_test_overlap": 0
+    },
+    "structural_leakage": {
+      "status": "PASS",
+      "train_structures": ["SOURCE_A", "B_train_1", "B_train_2", "B_train_3", "B_train_4"],
+      "val_structures": ["SOURCE_A", "B_train_1"],
+      "test_structures": ["SOURCE_A", "B_int_1", "B_int_2", "B_ext_soft", "B_ext_stiff", "C_4story"],
+      "overlap_interior_test": 0,
+      "overlap_exterior_test": 0,
+      "overlap_topology_test": 0
+    },
+    "normalization_leakage": {
+      "status": "PASS",
+      "description": "Category A physical reference scaling used; zero test-time statistical normalization"
+    },
+    "checkpoint_leakage": {
+      "status": "PASS",
+      "description": "Fixed 12-epoch checkpoints saved without post-hoc test selection"
+    },
+    "threshold_leakage": {
+      "status": "PASS",
+      "description": "Sign/argmax decision rule evaluated without test-data threshold fitting"
+    },
+    "hyperparameter_leakage": {
+      "status": "PASS",
+      "description": "Architecture and learning rates frozen prior to Phase 7.1 execution"
+    },
+    "input_feature_leakage": {
+      "status": "FAIL_CRITICAL",
+      "description": "edge_features[:, 3] encoded damaged Young's modulus E_norm = (1 - d_e) * E_nom / E_0 due to extracting features on post-damage frame in phase7_dataset_generator.py line 109. B5 and PROPOSED models ingested this feature.",
+      "affected_models": ["B5", "PROPOSED"],
+      "unaffected_models": ["B1", "B2", "B3", "B4"]
+    }
+  },
+  "statistics": {
+    "fundamental_experimental_unit": "earthquake_bilateral_pair",
+    "test_sample_size_per_condition": 30,
+    "pseudoreplication_status": "Strictly avoided; N=30 independent earthquake records used for binomial CIs; 3 seeds reported separately as mean +/- std",
+    "phase6_2_s4_accuracy": {
+      "numerator": 27,
+      "denominator": 30,
+      "observed_pct": 90.0,
+      "ci_95": [73.47, 97.89],
+      "null_hypothesis": 50.0,
+      "p_value": 4.07e-6
+    },
+    "phase6_2_s0_accuracy": {
+      "numerator": 15,
+      "denominator": 30,
+      "observed_pct": 50.0,
+      "ci_95": [31.30, 68.70],
+      "null_hypothesis": 50.0,
+      "p_value": 1.0
+    }
+  },
+  "evaluation_accounting": {
+    "total_evaluations": 108,
+    "protocols": ["P1", "P2"],
+    "modalities": ["S0", "S1", "S4"],
+    "models": ["B1", "B2", "B3", "B4", "B5", "PROPOSED"],
+    "seeds": [42, 101, 2024],
+    "eval_breakdown": "2 protocols * 3 modalities * 6 models * 3 seeds = 108 evaluations",
+    "checkpoints_verified_on_disk": 108,
+    "all_test_evaluations_records": 108
+  },
+  "simulation_accounting": {
+    "total_simulations": 530,
+    "unique_ground_motions": 120,
+    "structural_variants": 10,
+    "standard_runs": 250,
+    "bilateral_pairs": 140,
+    "bilateral_paired_runs": 280,
+    "sum_check": "250 + 280 = 530 runs",
+    "split_counts": {
+      "train_P1": 70,
+      "train_P1_pair": 20,
+      "train_P2_diversity": 140,
+      "val_standard": 40,
+      "val_pair": 20,
+      "test_L1_ID": 60,
+      "test_L2A_interp": 60,
+      "test_L2B_extrap": 60,
+      "test_L3_topology": 60
+    }
+  },
+  "topology_ood": {
+    "structure_id": "C_4story",
+    "stories": 4,
+    "nodes": 10,
+    "elements": 12,
+    "training_exposure": "None (strictly zero-shot structural topology)",
+    "observability_gate_b": {
+      "S0": {"kappa": 13496.28, "sigma_min": 0.0691, "status": "F1_UNOBSERVABLE"},
+      "S1": {"kappa": 85.91, "sigma_min": 35.48, "status": "PASS"},
+      "S4": {"kappa": 16.08, "sigma_min": 241.72, "status": "PASS"}
+    },
+    "audit_finding": "Graph neural operator handles variable node/edge counts seamlessly, but experimental attribution figures in Phase 7 are confounded by input edge feature leakage."
+  },
+  "reproducibility": {
+    "random_seeds": [42, 101, 2024],
+    "deterministic_settings_enforced": true,
+    "openseespy_solver": "Transient Newmark (gamma=0.5, beta=0.25)",
+    "time_step_s": 0.01,
+    "damping_ratio": 0.03,
+    "all_checkpoints_preserved": true,
+    "unit_tests_passing": 70,
+    "gstack_ship_audit": "GREEN"
+  },
+  "required_corrections": [
+    {
+      "priority": "CRITICAL",
+      "target": "results/phase7/reports/phase7_2_inverse_evaluation_report.md",
+      "issue": "Discrepancy between report text (which claims 90.0%, 83.3%, and S0=50.0%) and the embedded table/JSONs (which report 100.0% for P2 PROPOSED/B5 and 66.7% for P1 PROPOSED across all levels including S0).",
+      "remedy": "Explicitly document the edge feature leakage in Phase 7 B5/PROPOSED models. Present Phase 6.2 as the authoritative verified single-structure bilateral result (90.0% under S4, 50.0% under S0), and frame Phase 7 as establishing the mathematical framework, forward validation (Gate A), and observability gates (Gate B) while highlighting the feature leakage forensic finding as a vital research lesson."
+    },
+    {
+      "priority": "HIGH",
+      "target": "Scientific wording across repository",
+      "issue": "Overclaiming words such as 'proved universally ill-posed', 'solves the inverse problem', and unqualified 'zero-shot transfer'.",
+      "remedy": "Replace with mathematically precise, bounded language characterizing the null space of the observation operator under specified sensing layouts and finite-element modeling assumptions."
+    },
+    {
+      "priority": "MEDIUM",
+      "target": "Phase 5.5 vs Phase 5 Condition Numbers",
+      "issue": "Raw Jacobian condition numbers mixed physical units ($m/s^2$ vs $rad/s^2$ vs strain).",
+      "remedy": "Ensure all published condition numbers and singular spectra strictly cite the noise-whitened Jacobian R^{-1/2} J."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "mean_diff_zeroing_strain_channels": 0.0005538567784242332,
+  "mean_diff_zeroing_horizontal_channels": 0.0008306932868435979,
+  "mean_diff_zeroing_ground_motion": 0.004876206163316965,
+  "mean_diff_10pct_noise_on_strain": 1.3999941074871458e-05,
+  "mean_diff_10pct_noise_on_horizontal": 1.2385976333462168e-05,
+  "strain_branch_actively_utilized": true,
+  "horizontal_branch_actively_utilized": true,
+  "relative_strain_to_horiz_sensitivity": 0.6667404049077296
+}

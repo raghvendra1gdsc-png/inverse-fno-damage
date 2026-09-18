@@ -1,0 +1,297 @@
+{
+  "project": "Inverse-FNO-Damage",
+  "experimental_status": "FROZEN_COMPLETE_POST_TRAINING_BUDGET_ABLATION",
+  "core_thesis": "Solving ill-posed seismic inverse problems with neural operators requires disentangling physical observability, neural learnability, and cross-structure transferability: while multimodal sensing and symmetry-aware pairwise supervision successfully resolve bilateral damage ambiguity on a single structure, cross-structure parameter dispersion exposes a fundamental direction–magnitude decoupling where directional sensitivity transfers zero-shot across topologies while finite damage separation collapses to the symmetric mean.",
+  "verified_contributions": [
+    {
+      "id": "C1",
+      "title": "Bilateral Non-Identifiable Near-Null Space Under Symmetric Horizontal Sensing",
+      "status": "VERIFIED",
+      "evidence": "OpenSees transient dynamic simulations in Phase 1 and Jacobian SVD in Phase 5 established that State A and State B produce horizontal floor acceleration differences <0.14% (I_AB = 5.6), confirming that bilateral ambiguity is a physical near-null space property.",
+      "artifacts": [
+        "results/ill_posedness_metrics.json",
+        "results/observability/symmetry_baseline.json",
+        "reports/technical_report/phase5_observability.md"
+      ]
+    },
+    {
+      "id": "C2",
+      "title": "Noise-Whitened Fisher Information Framework for Asymmetric Multimodal Observability",
+      "status": "VERIFIED",
+      "evidence": "Phase 5.5 noise-whitened directional Fisher sensitivity analysis proved that vertical acceleration (S1, sqrt(I_AB)=1829.6) and multimodal sensing (S4, sqrt(I_AB)=2270.5) amplify bilateral sensitivity by >300x over horizontal sensing (S0, sqrt(I_AB)=5.6), moving v_AB out of the numerical near-null space.",
+      "artifacts": [
+        "results/observability/phase5_5_forensic_audit.json",
+        "reports/technical_report/phase5_5_forensic_audit.md"
+      ]
+    },
+    {
+      "id": "C3",
+      "title": "Symmetry-Aware Graph Neural Operator with Matched Bilateral Pair Supervision",
+      "status": "VERIFIED",
+      "evidence": "Phase 6.2 benchmark on single-structure SOURCE_A (N=30 held-out evaluations across 15 disjoint pairs) demonstrated that explicit directional and margin supervision elevates bilateral attribution from 50.0% to 80.0% under S1 (p=0.0014) and 90.0% under S4 (p=9.0e-6, cos=+0.9420, sep=0.1671).",
+      "artifacts": [
+        "results/phase6_2/bilateral_results.json",
+        "reports/technical_report/phase6_2_final_audit.md"
+      ]
+    },
+    {
+      "id": "C4",
+      "title": "Empirical Proof that Physical Observability is Necessary but Insufficient for Learnability",
+      "status": "VERIFIED",
+      "evidence": "Phase 6.2 configuration S2 (column axial strain) exhibited strong directional Fisher sensitivity (sqrt(I_AB)=1344.2) yet collapsed to 50.0% attribution (cos=+0.1047, sep=0.0003), demonstrating an observability vs learnability gap caused by gradient dominance of high-amplitude floor accelerations.",
+      "artifacts": [
+        "results/phase6_2/bilateral_results.json",
+        "reports/technical_report/phase6_2_final_audit.md"
+      ]
+    }
+  ],
+  "conditional_contributions": [
+    {
+      "id": "C5",
+      "title": "Zero-Shot Transferability of Directional Damage Sensitivity Across Topological Boundaries",
+      "status": "CONDITIONALLY_SUPPORTED",
+      "evidence": "In Phase 7 and the budget ablation, continuous directional sensitivity transferred to unseen frame parameters (L2A cos=+0.841, L2B cos=+0.813) and an unseen 4-story frame (L3 cos=+0.798, with individual seeds reaching +0.955), but finite-state discrete attribution did not transfer (remaining at 50.0%).",
+      "caveat": "Transfer is verified strictly for the continuous directional orientation vector, not for discrete damage state classification."
+    },
+    {
+      "id": "C6",
+      "title": "Empirical Delineation of Training Budget in Multi-Structure Finite-Separation Collapse",
+      "status": "CONDITIONALLY_SUPPORTED",
+      "evidence": "Scaling optimization budget by 8.3x (12 to 100 epochs) across 72 evaluations refined directional alignment (+0.467 to +0.850) but produced zero change in discrete attribution (flat at 50.0%), ruling out undertraining as the explanation.",
+      "caveat": "Demonstrates that optimization budget within standard AdamW cannot resolve multi-structure separation collapse; does not mathematically prove impossibility under alternate architectures or loss formulations."
+    }
+  ],
+  "unsupported_claims": [
+    {
+      "claim": "Mathematical proof of ill-posedness",
+      "status": "UNSUPPORTED",
+      "correction": "Replace with: Numerical and empirical demonstration of bilateral non-identifiability and near-null space alignment under symmetric horizontal floor acceleration sensing."
+    },
+    {
+      "claim": "Proved fundamental multi-structure limitation",
+      "status": "UNSUPPORTED",
+      "correction": "Replace with: Empirical evidence that multi-structure parameter dispersion induces a finite-separation collapse that is not resolved by increasing the training budget within the tested neural operator framework."
+    },
+    {
+      "claim": "Solves inverse damage identification",
+      "status": "UNSUPPORTED",
+      "correction": "Replace with: Provides a principled physics- and symmetry-aware formulation that identifies and partially resolves bilateral non-uniqueness on single structures while delineating the boundary of cross-structure transfer."
+    },
+    {
+      "claim": "Eliminates the null space",
+      "status": "UNSUPPORTED",
+      "correction": "Replace with: Identifies sensor modalities (such as vertical floor acceleration) that physically move the bilateral difference vector out of the differential operator's numerical near-null space."
+    },
+    {
+      "claim": "Guarantees generalization",
+      "status": "UNSUPPORTED",
+      "correction": "Replace with: Demonstrates zero-shot directional transfer to unseen frame parameters and an out-of-distribution 4-story topology, while documenting the collapse of discrete attribution."
+    },
+    {
+      "claim": "Directional loss learns the true gradient",
+      "status": "UNSUPPORTED",
+      "correction": "Replace with: Directional supervision aligns the network's pairwise difference vector with the canonical bilateral damage orientation vector."
+    },
+    {
+      "claim": "Real-world deployment ready / AI can identify earthquake damage reliably",
+      "status": "UNSUPPORTED",
+      "correction": "Replace with: A foundational benchmark conducted on validated OpenSees finite-element models, providing baseline constraints prior to experimental shake-table or instrumented field testing."
+    }
+  ],
+  "phase_chain": [
+    {
+      "phase": "Phase 1",
+      "question": "Does symmetric horizontal floor acceleration sensing induce physical non-identifiability between bilateral damage states?",
+      "method": "OpenSeesPy dynamic simulations of 3-story frame comparing State A (left column 30%) vs State B (right column 30%).",
+      "main_result": "Horizontal floor accelerations differ by <0.14%, establishing empirical non-identifiability.",
+      "evidence_artifact": "results/ill_posedness_metrics.json",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "Phase 2",
+      "question": "Can a 1D Fourier Neural Operator approximate the forward transient dynamic mapping accurately?",
+      "method": "1D Spectral Conv forward operator trained on earthquake-induced structural acceleration traces.",
+      "main_result": "Forward FNO achieves NRMSE < 0.05 (~0.038), validating operator approximation capability.",
+      "evidence_artifact": "results/forward_evaluation.json",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "Phase 3",
+      "question": "Can standard Inverse FNO invert sparse acceleration signals without mean-seeking collapse?",
+      "method": "Direct inverse mapping trained with MSE loss vs physics-informed regularization (Sparsity L1 + TV + Cycle Consistency).",
+      "main_result": "Naive MSE collapses to diffuse zero-mean state; regularization enforces sparsity but cannot resolve bilateral ambiguity.",
+      "evidence_artifact": "results/regularization_ablation.json",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "Phase 4",
+      "question": "How does spatial sensor placement and sparsity govern localization and severity accuracy?",
+      "method": "Systematic story-level sensor placement sweep (1-sensor, 2-sensor, full 3-story).",
+      "main_result": "Graceful degradation with sparsity, but horizontal floor sensors cannot differentiate symmetric columns regardless of sensor density.",
+      "evidence_artifact": "results/sensor_sparsity_sweep.json",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "Phase 5",
+      "question": "What is the mathematical structure of the parameter-to-response sensitivity mapping?",
+      "method": "Finite-difference Jacobian linearization, SVD singular spectra, and Fisher Information Matrix across S0..S4.",
+      "main_result": "S0 possesses near-zero singular values aligned with v_AB, proving that bilateral ambiguity is a physical near-null space property (I_AB = 5.6).",
+      "evidence_artifact": "results/observability/symmetry_baseline.json",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "Phase 5.5",
+      "question": "Which sensor modalities physically resolve bilateral ambiguity under noise-whitened conditions?",
+      "method": "Noise-whitened Jacobian J_w = Sigma^(-1/2) J and directional Fisher sensitivity I_AB = v_AB^T F_w v_AB.",
+      "main_result": "sqrt(I_AB): S4 (2270.5) > S1 (1829.6) > S2 (1344.2) >> S0 (5.6). Adding vertical acceleration amplifies sensitivity by >300x.",
+      "evidence_artifact": "results/observability/phase5_5_forensic_audit.json",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "Phase 6",
+      "question": "Can a symmetry-aware dual-stream Graph FNO resolve bilateral damage states under unpaired supervision?",
+      "method": "DualStreamGFNO decomposing representations into symmetric H+ and antisymmetric H- latent subspaces with hierarchical heads.",
+      "main_result": "Improves overall localization, but bilateral attribution remains at 50% chance level under unpaired supervision.",
+      "evidence_artifact": "results/phase6/bilateral_benchmark_results.json",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "Phase 6.1",
+      "question": "Why did ordinary supervised learning fail to separate bilateral states on observable configurations (S1, S4)?",
+      "method": "Sensor utilization tracing, gradient norm tracking, and input attribution analysis.",
+      "main_result": "Gradient dominance: high-power horizontal floor accelerations drive 98%+ of early loss reduction, ignoring subtle vertical/strain signals.",
+      "evidence_artifact": "results/phase6/sensor_utilization.json",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "Phase 6.2",
+      "question": "Does explicit bilateral pair supervision force the network to utilize asymmetric sensing and separate states?",
+      "method": "Matched bilateral pair training with directional loss L_dir and contrastive margin loss L_pair.",
+      "main_result": "Single-structure SOURCE_A (N=30 evaluations): S4 achieves 90.0% (p=9.0e-6, cos=+0.9420, sep=0.1671); S1 achieves 80.0% (p=0.0014); S0 remains 50.0%; S2 reveals learnability gap (50.0%).",
+      "evidence_artifact": "results/phase6_2/bilateral_results.json",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "Phase 7",
+      "question": "Does the bilateral inverse mapping generalize across varied structural configurations and unseen topologies?",
+      "method": "530 OpenSees simulations across 120 PEER earthquakes, 10 structural configurations, protocols P1 and P2, tested across L1, L2A, L2B, L3.",
+      "main_result": "Under pristine physics conditioning (E_norm=1.0), discrete attribution drops to 50.0% across all levels, while directional cosine remains consistently positive (+0.43 to +0.48).",
+      "evidence_artifact": "results/experiments/FINAL_PHASE7_CLEAN_AUDIT.json",
+      "status": "VERIFIED"
+    },
+    {
+      "phase": "Training Budget Ablation",
+      "question": "Is the clean Phase 7 attribution collapse caused primarily by undertraining (12 epochs)?",
+      "method": "Controlled budget scaling [12, 25, 50, 100 epochs] across 3 seeds (42, 101, 2024), P1/P2, and S0/S1/S4 (72 evaluations) on Mac GPU.",
+      "main_result": "Budget scaling increases directional cosine (+0.467 -> +0.852 -> +0.897 -> +0.850, individual seeds up to +0.996), but discrete attribution remains pinned at 50.0% (sep ~ 1.8e-5 << 0.30).",
+      "evidence_artifact": "results/experiments/phase7_training_budget/TRAINING_BUDGET_ABLATION.json",
+      "status": "VERIFIED"
+    }
+  ],
+  "training_budget_finding": {
+    "total_evaluations": 72,
+    "budgets": [12, 25, 50, 100],
+    "seeds": [42, 101, 2024],
+    "protocols": ["P1", "P2"],
+    "modalities": ["S0", "S1", "S4"],
+    "p2_s4_trajectory": {
+      "ep12": {"acc_pct": 50.0, "cos": 0.4667, "sep": 2.68e-06, "train_loss": 0.6011},
+      "ep25": {"acc_pct": 50.0, "cos": 0.8525, "sep": 7.68e-06, "train_loss": 0.5143},
+      "ep50": {"acc_pct": 50.0, "cos": 0.8975, "sep": 1.23e-05, "train_loss": 0.5246},
+      "ep100": {"acc_pct": 50.0, "cos": 0.8495, "sep": 1.83e-05, "train_loss": 0.5553}
+    },
+    "l3_topology_trajectory": {
+      "ep12": {"acc_pct": 50.0, "cos": 0.4888, "sep": 2.64e-06},
+      "ep25": {"acc_pct": 50.0, "cos": 0.7773, "sep": 7.09e-06},
+      "ep50": {"acc_pct": 50.0, "cos": 0.8368, "sep": 1.07e-05},
+      "ep100": {"acc_pct": 50.0, "cos": 0.7975, "sep": 1.76e-05}
+    },
+    "scientific_phenomenon": "Direction–Magnitude Decoupling",
+    "hierarchy_verdicts": {
+      "A_undertraining_causes_failure": "REFUTED",
+      "B_optimization_budget_not_dominant": "STRONGLY_SUPPORTED",
+      "C_directional_sensitivity_learned_without_finite_separation": "VERIFIED",
+      "D_distribution_shift_plausible_mechanism": "STRONGLY_SUPPORTED",
+      "E_distribution_shift_proven_unique_fundamental_cause": "NOT_SUPPORTED"
+    }
+  },
+  "phase6_2_bilateral_result": {
+    "structure": "SOURCE_A",
+    "evaluation_sample_size": 30,
+    "held_out_validation_pairs": 15,
+    "evaluations_per_pair": 2,
+    "s0": {"successes": 15, "total": 30, "accuracy_pct": 50.0, "ci_95": [31.3, 68.7], "p_value": 1.0, "cosine": -0.1151, "sep": 9.04e-06},
+    "s1": {"successes": 24, "total": 30, "accuracy_pct": 80.0, "ci_95": [61.4, 92.3], "p_value": 0.0014, "cosine": 0.7272, "sep": 0.1576},
+    "s2": {"successes": 15, "total": 30, "accuracy_pct": 50.0, "ci_95": [31.3, 68.7], "p_value": 1.0, "cosine": 0.1047, "sep": 0.000328},
+    "s4": {"successes": 27, "total": 30, "accuracy_pct": 90.0, "ci_95": [73.5, 97.9], "p_value": 9.0e-06, "cosine": 0.9420, "sep": 0.1671},
+    "true_physical_separation": 0.424264,
+    "s4_recovery_ratio_pct": 39.40,
+    "statistical_test": "Two-sided exact binomial test vs chance (p0=0.5)"
+  },
+  "phase7_generalization": {
+    "level1_id": {
+      "structure": "SOURCE_A",
+      "earthquakes": "RSN0091..RSN0120 (30 held-out)",
+      "num_pairs": 30,
+      "num_evaluations": 60,
+      "clean_accuracy_pct": 50.0,
+      "cosine_at_100ep": 0.8495,
+      "separation_at_100ep": 1.83e-05,
+      "zero_shot": false
+    },
+    "level2a_interp": {
+      "structures": ["B_int_1", "B_int_2"],
+      "earthquakes": "RSN0091..RSN0120 (15 on B_int_1, 15 on B_int_2)",
+      "num_pairs": 30,
+      "num_evaluations": 60,
+      "clean_accuracy_pct": 50.0,
+      "cosine_at_100ep": 0.8411,
+      "separation_at_100ep": 1.92e-05,
+      "zero_shot": true
+    },
+    "level2b_extrap": {
+      "structures": ["B_ext_soft", "B_ext_stiff"],
+      "earthquakes": "RSN0091..RSN0120 (15 on B_ext_soft, 15 on B_ext_stiff)",
+      "num_pairs": 30,
+      "num_evaluations": 60,
+      "clean_accuracy_pct": 50.56,
+      "cosine_at_100ep": 0.8125,
+      "separation_at_100ep": 2.09e-05,
+      "zero_shot": true
+    },
+    "level3_topology": {
+      "structure": "C_4story (4 stories, 10 nodes, 12 elements)",
+      "earthquakes": "RSN0091..RSN0120 (30 held-out)",
+      "num_pairs": 30,
+      "num_evaluations": 60,
+      "clean_accuracy_pct": 50.0,
+      "cosine_at_100ep": 0.7975,
+      "separation_at_100ep": 1.76e-05,
+      "zero_shot": true
+    }
+  },
+  "simulation_accounting": {
+    "total_generated_npz_files": 530,
+    "train_p1_basis_simulations": 90,
+    "train_p2_diversity_additions": 140,
+    "validation_simulations": 60,
+    "test_simulations": 240,
+    "test_simulations_breakdown": {
+      "level1_source_a": 60,
+      "level2a_interpolation": 60,
+      "level2b_extrapolation": 60,
+      "level3_topology_c4story": 60
+    },
+    "total_reconciled": 530,
+    "unique_ground_motion_records": 120,
+    "partition_disjointness": "Train ∩ Val = Train ∩ Test = Val ∩ Test = ∅ (100% DISJOINT)"
+  },
+  "statistical_unit": "Earthquake bilateral pair / single simulation evaluation (N=30 independent pairs per level; random seeds reported separately as mean ± SD, pseudoreplication banned)",
+  "reproducibility_status": "VERIFIED_DETERMINISTIC",
+  "paper_readiness": "RESEARCH-GRADE / PAPER READY",
+  "remaining_required_work": [
+    "Draft formal manuscript incorporating the complete physical-mathematical-neural narrative.",
+    "Present single-structure identifiability (Phase 6.2, 90.0%) and multi-structure Direction-Magnitude Decoupling (Phase 7, cos=+0.85, sep=1.8e-5) as twin scientific pillars.",
+    "Formulate 3-minute faculty outreach pitch for structural dynamics and scientific ML faculty at IIT/IISc."
+  ]
+}

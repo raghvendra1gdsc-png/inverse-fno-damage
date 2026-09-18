@@ -1,0 +1,33 @@
+{
+  "overall": {
+    "num_samples": 32,
+    "mean_rel_l2_pct": 36.70948791503906,
+    "std_rel_l2_pct": 8.416659355163574,
+    "median_rel_l2_pct": 37.18096923828125,
+    "mean_correlation": 0.9029593260852892,
+    "mean_peak_error_pct": 13.471902847290039
+  },
+  "healthy_only": {
+    "num_samples": 8,
+    "mean_rel_l2_pct": 34.73654556274414,
+    "std_rel_l2_pct": 8.526179313659668,
+    "mean_correlation": 0.9129279024243672,
+    "mean_peak_error_pct": 16.67622947692871
+  },
+  "damaged_only": {
+    "num_samples": 24,
+    "mean_rel_l2_pct": 37.367130279541016,
+    "std_rel_l2_pct": 8.27596664428711,
+    "mean_correlation": 0.8996364673055967,
+    "mean_peak_error_pct": 12.403793334960938
+  },
+  "per_sensor": {
+    "floor_1_node_3_rel_l2_pct": 55.435302734375,
+    "floor_2_node_5_rel_l2_pct": 34.72759246826172,
+    "roof_node_7_rel_l2_pct": 30.42267608642578
+  },
+  "degradation_audit": {
+    "delta_rel_l2_damaged_minus_healthy_pct": 2.630584716796875,
+    "seismo_fno_elastic_benchmark_rel_l2_pct": 2.67
+  }
+}

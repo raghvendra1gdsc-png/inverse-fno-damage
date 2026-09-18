@@ -1,0 +1,35 @@
+{
+  "name": "gstack-inverse-fno-damage",
+  "version": "1.0.0",
+  "description": "gstack virtual engineering & research review framework for Inverse FNO Structural Damage Identification",
+  "author": "Inverse FNO Project Team / Applied Math & Structural AI Initiative",
+  "default_persona": "eng_manager",
+  "personas": [
+    "applied_math_researcher",
+    "structural_specialist",
+    "eng_manager",
+    "qa_lead",
+    "faculty_reviewer"
+  ],
+  "workflows": [
+    "review",
+    "gap-analysis",
+    "qa",
+    "office-hours",
+    "ship"
+  ],
+  "quality_gates": {
+    "min_test_count": 12,
+    "require_clean_git": false,
+    "max_allowed_guyan_discrepancy_pct": 0.01,
+    "required_si_units": {
+      "length": "m",
+      "force": "N",
+      "mass": "kg",
+      "time": "s",
+      "stress": "Pa"
+    },
+    "zero_cherry_picking_policy": true,
+    "traceability_required": true
+  }
+}

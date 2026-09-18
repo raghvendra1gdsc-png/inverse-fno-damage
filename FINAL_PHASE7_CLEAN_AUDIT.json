@@ -1,0 +1,69 @@
+{
+  "project": "Inverse-FNO-Damage",
+  "audit_phase": "Phase 7 Clean Re-Evaluation",
+  "audit_date": "September 2026",
+  "overall_verdict": "PASS WITH CAVEATS",
+  "classifications": {
+    "A_leakage_status": {
+      "verdict": "PASS",
+      "details": "Pristine nominal Young's modulus contract enforced in src/structure_features.py; extract_structural_graph_features decoupled from damage state; all 530 simulation files repaired; 4 automated regression tests pass."
+    },
+    "B_split_integrity": {
+      "verdict": "PASS",
+      "details": "Strict 70 Train / 20 Val / 30 Test PEER ground motion partition with 0% overlap; held-out structures (B_int, B_ext, C_4story) 100% absent from training and validation."
+    },
+    "C_normalization_integrity": {
+      "verdict": "PASS",
+      "details": "Category A physical reference scaling applied; zero test-set or dynamic statistical normalization."
+    },
+    "D_checkpoint_integrity": {
+      "verdict": "PASS",
+      "details": "All 108 model checkpoints accounted for; affected 36 models re-trained deterministically with exact seeds 42, 101, 2024; unaffected 72 B1-B4 baselines preserved."
+    },
+    "E_statistical_integrity": {
+      "verdict": "PASS",
+      "details": "N=30 independent earthquake pairs per test condition; pseudoreplication banned; exact Clopper-Pearson 95% confidence intervals; seed variation reported as mean +/- SD."
+    },
+    "F_physical_observability_integrity": {
+      "verdict": "PASS",
+      "details": "Gate A forward dynamics verified to < 0.003% modal error; Gate B observability verifies S0 is unobservable (kappa = 13,496, chance attribution) while S1 and S4 are observable."
+    },
+    "G_model_performance": {
+      "verdict": "PASS WITH CAVEATS",
+      "details": "Phase 6.2 headline attribution of 90.0% (27/30, p=4.07e-6) on SOURCE_A under S4 holds firmly. In Phase 7 clean multi-structure rerun, discrete attribution accuracy is 50.0% (symmetric collapse under 12 epochs), while directional cosine alignment remains positive (+0.43 mean, max +0.81)."
+    },
+    "H_interpolation_generalization": {
+      "verdict": "PASS WITH CAVEATS",
+      "details": "Level 2A interior variants B_int_1 and B_int_2 evaluate cleanly; discrete attribution is 50.0% across all models; directional cosine alignment maintained."
+    },
+    "I_extrapolation_generalization": {
+      "verdict": "PASS WITH CAVEATS",
+      "details": "Level 2B extreme variants B_ext_soft and B_ext_stiff evaluate cleanly; discrete attribution is 50.0% across all models; directional cosine alignment maintained."
+    },
+    "J_topology_ood_generalization": {
+      "verdict": "PASS WITH CAVEATS",
+      "details": "G-FNO successfully processes unseen 4-story frame without retraining or dimension hacks; discrete attribution is 50.0%; directional cosine alignment reaches +0.81 in seed 2024 under S4."
+    }
+  },
+  "benchmark_summary": {
+    "phase6_2_verified_headline": {
+      "modality": "S4",
+      "structure": "SOURCE_A",
+      "accuracy_pct": 90.0,
+      "numerator": 27,
+      "denominator": 30,
+      "p_value": 4.07e-6,
+      "directional_cosine": 0.9420,
+      "ci_95": [73.47, 97.89]
+    },
+    "phase7_clean_discrete_accuracy_pct": 50.0,
+    "phase7_clean_directional_cosine_s4_p2": {
+      "mean": 0.428,
+      "std": 0.294,
+      "seed_2024_max": 0.810
+    },
+    "baselines_b1_b5_directional_cosine": {
+      "mean_range": [-0.355, 0.000]
+    }
+  }
+}

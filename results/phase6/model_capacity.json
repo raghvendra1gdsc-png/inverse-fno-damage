@@ -1,0 +1,57 @@
+{
+  "Baseline_InverseFNO": {
+    "total_params": 41633,
+    "trainable_params": 41633,
+    "hidden_width_temporal": 32,
+    "modes_temporal": 12,
+    "hidden_width_graph": 32,
+    "graph_layers": 0,
+    "use_dual_stream": false,
+    "use_symmetry": false,
+    "use_hierarchical": false
+  },
+  "Baseline_GFNO": {
+    "total_params": 92449,
+    "trainable_params": 92449,
+    "hidden_width_temporal": 32,
+    "modes_temporal": 12,
+    "hidden_width_graph": 32,
+    "graph_layers": 2,
+    "use_dual_stream": false,
+    "use_symmetry": false,
+    "use_hierarchical": false
+  },
+  "DualStream_GFNO": {
+    "total_params": 93473,
+    "trainable_params": 93473,
+    "hidden_width_temporal": 32,
+    "modes_temporal": 12,
+    "hidden_width_graph": 32,
+    "graph_layers": 2,
+    "use_dual_stream": true,
+    "use_symmetry": false,
+    "use_hierarchical": false
+  },
+  "Symmetry_GFNO": {
+    "total_params": 94497,
+    "trainable_params": 94497,
+    "hidden_width_temporal": 32,
+    "modes_temporal": 12,
+    "hidden_width_graph": 32,
+    "graph_layers": 2,
+    "use_dual_stream": true,
+    "use_symmetry": true,
+    "use_hierarchical": false
+  },
+  "Proposed_GFNO": {
+    "total_params": 96675,
+    "trainable_params": 96675,
+    "hidden_width_temporal": 32,
+    "modes_temporal": 12,
+    "hidden_width_graph": 32,
+    "graph_layers": 2,
+    "use_dual_stream": true,
+    "use_symmetry": true,
+    "use_hierarchical": true
+  }
+}

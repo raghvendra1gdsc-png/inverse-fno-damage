@@ -1,0 +1,69 @@
+{
+  "audit_date": "2026-09-03",
+  "audit_phase": "Phase 7.0.3 Final Protocol Patch",
+  "total_raw_at2_files": 120,
+  "unique_earthquake_records": 120,
+  "file_range": "RSN0001_Imperial_Valley-06.AT2 to RSN0120_San_Fernando.AT2",
+  "inventory_status": "EXACTLY_120_UNIQUE_RECORDS",
+  "partition_redesign": {
+    "principle": "Train GMs ∩ Val GMs = Train GMs ∩ Test GMs = Val GMs ∩ Test GMs = ∅",
+    "train_earthquakes": {
+      "count": 70,
+      "range": "RSN0001 to RSN0070",
+      "percentage": 58.33
+    },
+    "val_earthquakes": {
+      "count": 20,
+      "range": "RSN0071 to RSN0090",
+      "percentage": 16.67
+    },
+    "held_out_test_earthquakes": {
+      "count": 30,
+      "range": "RSN0091 to RSN0120",
+      "percentage": 25.00
+    },
+    "total_partitioned": 120,
+    "leakage_count": 0,
+    "disjointness_guarantee": "STRICTLY_VERIFIED"
+  },
+  "simulation_accounting": {
+    "train_simulations": {
+      "P1_source_only": {
+        "SOURCE_A": 70,
+        "SOURCE_A_pairs": 20,
+        "subtotal": 90
+      },
+      "P2_multi_structure": {
+        "SOURCE_A_reused": 70,
+        "SOURCE_A_pairs_reused": 20,
+        "B_train_1": 35,
+        "B_train_2": 35,
+        "B_train_3": 35,
+        "B_train_4": 35,
+        "subtotal": 230
+      },
+      "total_unique_training_simulations_generated": 230
+    },
+    "validation_simulations": {
+      "SOURCE_A_standard": 20,
+      "B_train_1_standard": 20,
+      "SOURCE_A_pairs": 10,
+      "formula": "20 earthquakes × 2 structures = 40 standard + 10 pairs = 60 simulations",
+      "total_validation_simulations": 60
+    },
+    "test_simulations": {
+      "Level_1_ID": 15,
+      "Level_2A_Interp": 15,
+      "Level_2B_Extrap": 15,
+      "Level_3_Topology": 15,
+      "formula": "4 levels × 15 bilateral pairs = 60 test simulations (yielding 120 evaluation cases)",
+      "total_test_simulations": 60
+    },
+    "grand_total_structural_simulations": 350
+  },
+  "statistical_power": {
+    "evaluations_per_level": 30,
+    "independent_earthquakes_per_level": 30,
+    "pseudoreplication": "STRICTLY_PROHIBITED"
+  }
+}

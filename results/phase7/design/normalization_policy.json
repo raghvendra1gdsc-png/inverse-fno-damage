@@ -1,0 +1,28 @@
+{
+  "policy_name": "Phase 7 Normalization & Scaling Policy",
+  "principle": "Zero Test-to-Train Information Leakage across Static and Dynamic Scales",
+  "categories": {
+    "Category_A_Fixed_Physical_Normalization": {
+      "status": "PERMITTED_UNIVERSALLY",
+      "description": "Fixed reference constants derived from SOURCE_A design specifications used to make raw engineering quantities dimensionless without data-driven fitting.",
+      "quantities": {
+        "length": {"ref_scale": 3.0, "unit": "m", "formula": "L / 3.0"},
+        "area": {"ref_scale": 0.010, "unit": "m^2", "formula": "A / 0.010"},
+        "inertia": {"ref_scale": 1.0e-4, "unit": "m^4", "formula": "I / 1.0e-4"},
+        "modulus": {"ref_scale": 2.0e11, "unit": "Pa", "formula": "E / 2.0e11"},
+        "nodal_mass": {"ref_scale": 10000.0, "unit": "kg", "formula": "m / 10000.0"}
+      }
+    },
+    "Category_B_Learned_Training_Normalization": {
+      "status": "FROZEN_ON_TRAIN_SPLIT_ONLY",
+      "description": "Empirical channel-wise mean and standard deviation computed strictly over training simulations. Validation and OOD test sets are standardized using these exact frozen training statistics.",
+      "training_split_basis": "SOURCE_A (70 GMs) + B_train_1..4 (70 GMs) = 140 training simulations",
+      "prohibition": "No test set observation (ID, Interp, Extrap, Topology) may contribute to mean/std computation."
+    },
+    "Category_C_Test_Specific_Normalization": {
+      "status": "STRICTLY_FORBIDDEN",
+      "description": "Standardizing each OOD test structure by its own empirical response mean and variance is prohibited, as it constitutes test-time leakage.",
+      "exception": "Ground motion scaling: If normalized by incident ground motion RMS, this is physically observable at deployment time and permitted."
+    }
+  }
+}

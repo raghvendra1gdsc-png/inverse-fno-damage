@@ -1,0 +1,130 @@
+{
+  "Naive_MSE_Baseline": {
+    "overall": {
+      "num_test_samples": 32,
+      "overall_mae": 0.04582912474870682,
+      "overall_rmse": 0.11195578426122665,
+      "healthy_samples": 8,
+      "damaged_samples": 24
+    },
+    "localization": {
+      "top1_accuracy_pct": 12.5,
+      "top1_error_rate_pct": 87.5,
+      "top2_accuracy_pct": 25.0,
+      "mean_story_localization_error": 0.875
+    },
+    "severity": {
+      "mean_severity_error_on_damaged_elements": 0.291675329208374,
+      "mean_false_positive_damage_on_intact_elements": 0.015104848891496658,
+      "mean_false_positive_on_healthy_records": 0.008532145991921425
+    }
+  },
+  "L1_Sparsity_Only": {
+    "overall": {
+      "num_test_samples": 32,
+      "overall_mae": 0.03625576198101044,
+      "overall_rmse": 0.11212732642889023,
+      "healthy_samples": 8,
+      "damaged_samples": 24
+    },
+    "localization": {
+      "top1_accuracy_pct": 12.5,
+      "top1_error_rate_pct": 87.5,
+      "top2_accuracy_pct": 25.0,
+      "mean_story_localization_error": 1.0416666666666667
+    },
+    "severity": {
+      "mean_severity_error_on_damaged_elements": 0.30650627613067627,
+      "mean_false_positive_damage_on_intact_elements": 0.0,
+      "mean_false_positive_on_healthy_records": 0.0
+    },
+    "config": {
+      "lambda_data": 1.0,
+      "lambda_sparse": 0.05,
+      "lambda_tv": 0.0,
+      "lambda_cycle": 0.0,
+      "epochs": 35
+    }
+  },
+  "TV_Prior_Only": {
+    "overall": {
+      "num_test_samples": 32,
+      "overall_mae": 0.042652055621147156,
+      "overall_rmse": 0.11140921711921692,
+      "healthy_samples": 8,
+      "damaged_samples": 24
+    },
+    "localization": {
+      "top1_accuracy_pct": 8.333333333333332,
+      "top1_error_rate_pct": 91.66666666666667,
+      "top2_accuracy_pct": 16.666666666666664,
+      "mean_story_localization_error": 1.0416666666666667
+    },
+    "severity": {
+      "mean_severity_error_on_damaged_elements": 0.3000986874103546,
+      "mean_false_positive_damage_on_intact_elements": 0.00820023100823164,
+      "mean_false_positive_on_healthy_records": 0.007855886593461037
+    },
+    "config": {
+      "lambda_data": 1.0,
+      "lambda_sparse": 0.0,
+      "lambda_tv": 0.05,
+      "lambda_cycle": 0.0,
+      "epochs": 35
+    }
+  },
+  "Cycle_Consistency_Only": {
+    "overall": {
+      "num_test_samples": 32,
+      "overall_mae": 0.04757632687687874,
+      "overall_rmse": 0.10789524763822556,
+      "healthy_samples": 8,
+      "damaged_samples": 24
+    },
+    "localization": {
+      "top1_accuracy_pct": 12.5,
+      "top1_error_rate_pct": 87.5,
+      "top2_accuracy_pct": 25.0,
+      "mean_story_localization_error": 0.9166666666666666
+    },
+    "severity": {
+      "mean_severity_error_on_damaged_elements": 0.2880243957042694,
+      "mean_false_positive_damage_on_intact_elements": 0.01656220108270645,
+      "mean_false_positive_on_healthy_records": 0.013246149756014347
+    },
+    "config": {
+      "lambda_data": 1.0,
+      "lambda_sparse": 0.0,
+      "lambda_tv": 0.0,
+      "lambda_cycle": 0.02,
+      "epochs": 35
+    }
+  },
+  "Combined_L1_and_Cycle": {
+    "overall": {
+      "num_test_samples": 32,
+      "overall_mae": 0.05043812096118927,
+      "overall_rmse": 0.10817334800958633,
+      "healthy_samples": 8,
+      "damaged_samples": 24
+    },
+    "localization": {
+      "top1_accuracy_pct": 16.666666666666664,
+      "top1_error_rate_pct": 83.33333333333334,
+      "top2_accuracy_pct": 29.166666666666668,
+      "mean_story_localization_error": 0.75
+    },
+    "severity": {
+      "mean_severity_error_on_damaged_elements": 0.28714194893836975,
+      "mean_false_positive_damage_on_intact_elements": 0.01939297467470169,
+      "mean_false_positive_on_healthy_records": 0.018011948093771935
+    },
+    "config": {
+      "lambda_data": 1.0,
+      "lambda_sparse": 0.02,
+      "lambda_tv": 0.0,
+      "lambda_cycle": 0.01,
+      "epochs": 35
+    }
+  }
+}

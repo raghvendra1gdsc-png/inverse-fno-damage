@@ -1,0 +1,50 @@
+{
+  "target_stats": {
+    "positive_rate": 0.1417624521072797,
+    "mean": 0.03892139717936516,
+    "median": 0.0,
+    "variance": 0.010655989870429039
+  },
+  "model_diagnostics": {
+    "Baseline_InverseFNO": {
+      "pred_mean": 0.037830498069524765,
+      "pred_median": 0.03491615504026413,
+      "pred_variance": 0.0003773448697756976,
+      "fraction_predictions_less_than_0_01": 0.09961685823754789,
+      "fraction_support_prob_greater_than_0_5": 0.9003831417624522,
+      "is_collapsed_to_zero": false
+    },
+    "Baseline_GFNO": {
+      "pred_mean": 0.0,
+      "pred_median": 0.0,
+      "pred_variance": 0.0,
+      "fraction_predictions_less_than_0_01": 1.0,
+      "fraction_support_prob_greater_than_0_5": 0.0,
+      "is_collapsed_to_zero": true
+    },
+    "DualStream_GFNO": {
+      "pred_mean": 0.0,
+      "pred_median": 0.0,
+      "pred_variance": 0.0,
+      "fraction_predictions_less_than_0_01": 1.0,
+      "fraction_support_prob_greater_than_0_5": 0.0,
+      "is_collapsed_to_zero": true
+    },
+    "Symmetry_GFNO": {
+      "pred_mean": 0.0,
+      "pred_median": 0.0,
+      "pred_variance": 0.0,
+      "fraction_predictions_less_than_0_01": 1.0,
+      "fraction_support_prob_greater_than_0_5": 0.0,
+      "is_collapsed_to_zero": true
+    },
+    "Proposed_GFNO": {
+      "pred_mean": 0.1008840799331665,
+      "pred_median": 0.10271206498146057,
+      "pred_variance": 0.00010883107461268082,
+      "fraction_predictions_less_than_0_01": 0.0,
+      "fraction_support_prob_greater_than_0_5": 0.0,
+      "is_collapsed_to_zero": false
+    }
+  }
+}

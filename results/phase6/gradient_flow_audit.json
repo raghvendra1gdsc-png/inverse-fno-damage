@@ -1,0 +1,14 @@
+{
+  "input_sensor_grad_norm": 7.7861436409421e-08,
+  "input_global_grad_norm": 1.1201760798940086e-06,
+  "branch_A_global_fno_grad_norm": 7.724855939393202e-05,
+  "branch_B_node_fno_grad_norm": 1.2751920502669226e-05,
+  "graph_convs_grad_norm": 0.00013467005281082487,
+  "fusion_linear_grad_norm": 0.000944806875688479,
+  "edge_decoder_grad_norm": 0.020081674677330675,
+  "support_head_grad_norm": 0.21063190551102853,
+  "severity_head_grad_norm": 0.013721977780215104,
+  "support_loss_gradient_active": true,
+  "severity_loss_gradient_active": true,
+  "branch_B_gradient_active": true
+}

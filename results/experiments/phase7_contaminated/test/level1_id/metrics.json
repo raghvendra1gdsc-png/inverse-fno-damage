@@ -1,0 +1,2702 @@
+[
+  {
+    "protocol": "P1",
+    "modality": "S1",
+    "model_id": "B1",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.44976285646359127,
+      "separation": 7.247577284867172e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S1",
+    "model_id": "B1",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.2955168873071671,
+      "separation": 1.2041720992783667e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S1",
+    "model_id": "B1",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.31841559410095216,
+      "separation": 2.6866038474793185e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S1",
+    "model_id": "B2",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.00019473024488737186,
+      "separation": 4.336845980409028e-06,
+      "confusion": [
+        [
+          6,
+          24
+        ],
+        [
+          6,
+          24
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S1",
+    "model_id": "B2",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.002493342493350307,
+      "separation": 1.3641002846990584e-06,
+      "confusion": [
+        [
+          22,
+          8
+        ],
+        [
+          22,
+          8
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S1",
+    "model_id": "B2",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 48.333333333333336,
+      "ci_95": [
+        35.231293000212645,
+        61.605398266840304
+      ],
+      "cosine": -0.005077264816403234,
+      "separation": 9.41165089898277e-06,
+      "confusion": [
+        [
+          7,
+          23
+        ],
+        [
+          8,
+          22
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S1",
+    "model_id": "B3",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.0007549608824774622,
+      "separation": 6.843796550507856e-07,
+      "confusion": [
+        [
+          14,
+          16
+        ],
+        [
+          14,
+          16
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S1",
+    "model_id": "B3",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 48.333333333333336,
+      "ci_95": [
+        35.231293000212645,
+        61.605398266840304
+      ],
+      "cosine": 0.00021831413032487036,
+      "separation": 5.911286947934968e-07,
+      "confusion": [
+        [
+          3,
+          27
+        ],
+        [
+          4,
+          26
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S1",
+    "model_id": "B3",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.0026573412202803106,
+      "separation": 4.542357362424809e-06,
+      "confusion": [
+        [
+          9,
+          21
+        ],
+        [
+          9,
+          21
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S1",
+    "model_id": "B4",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.008054790444051226,
+      "separation": 3.9947603298173815e-06,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S1",
+    "model_id": "B4",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.0011726110513942936,
+      "separation": 1.331025772325726e-06,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S1",
+    "model_id": "B4",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.003941262093333838,
+      "separation": 5.080658241733242e-06,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S1",
+    "model_id": "B5",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.9999487102031708,
+      "separation": 0.0007527287409175188,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S1",
+    "model_id": "B5",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.9998570501804351,
+      "separation": 0.0005128155190808078,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S1",
+    "model_id": "B5",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.999408225218455,
+      "separation": 0.0005409679977068057,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S1",
+    "model_id": "PROPOSED",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.9999365369478862,
+      "separation": 0.0013557821395806969,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S1",
+    "model_id": "PROPOSED",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.9998969197273254,
+      "separation": 0.0013690418369757633,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S1",
+    "model_id": "PROPOSED",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.9999844610691071,
+      "separation": 0.0038918533517668646,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S4",
+    "model_id": "B1",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.44976285646359127,
+      "separation": 7.247577284867172e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S4",
+    "model_id": "B1",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.2955168873071671,
+      "separation": 1.2041720992783667e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S4",
+    "model_id": "B1",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.31841559410095216,
+      "separation": 2.6866038474793185e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S4",
+    "model_id": "B2",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 2.9471608771321676e-05,
+      "separation": 4.301455320880147e-06,
+      "confusion": [
+        [
+          8,
+          22
+        ],
+        [
+          8,
+          22
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S4",
+    "model_id": "B2",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.0032322892259495956,
+      "separation": 1.3471061720338184e-06,
+      "confusion": [
+        [
+          22,
+          8
+        ],
+        [
+          22,
+          8
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S4",
+    "model_id": "B2",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 48.333333333333336,
+      "ci_95": [
+        35.231293000212645,
+        61.605398266840304
+      ],
+      "cosine": -0.004959882088830151,
+      "separation": 9.411444773377298e-06,
+      "confusion": [
+        [
+          7,
+          23
+        ],
+        [
+          8,
+          22
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S4",
+    "model_id": "B3",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 51.66666666666667,
+      "ci_95": [
+        38.39460173315969,
+        64.76870699978736
+      ],
+      "cosine": 0.0007656246578941743,
+      "separation": 6.810048001663442e-07,
+      "confusion": [
+        [
+          15,
+          15
+        ],
+        [
+          14,
+          16
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S4",
+    "model_id": "B3",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 48.333333333333336,
+      "ci_95": [
+        35.231293000212645,
+        61.605398266840304
+      ],
+      "cosine": 0.0,
+      "separation": 5.867998690215851e-07,
+      "confusion": [
+        [
+          3,
+          27
+        ],
+        [
+          4,
+          26
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S4",
+    "model_id": "B3",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.0032527449642657303,
+      "separation": 4.54456747055095e-06,
+      "confusion": [
+        [
+          9,
+          21
+        ],
+        [
+          9,
+          21
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S4",
+    "model_id": "B4",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.007094980970335504,
+      "separation": 3.993049689654527e-06,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S4",
+    "model_id": "B4",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.001919360908990105,
+      "separation": 1.330148705847023e-06,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S4",
+    "model_id": "B4",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.003717769831807042,
+      "separation": 5.074295787229251e-06,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S4",
+    "model_id": "B5",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.9999486804008484,
+      "separation": 0.0007527305143109213,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S4",
+    "model_id": "B5",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.9998570740222931,
+      "separation": 0.0005128131325667103,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S4",
+    "model_id": "B5",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.999408382177353,
+      "separation": 0.0005409614047190795,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S4",
+    "model_id": "PROPOSED",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.9999443511168162,
+      "separation": 0.0013409708665373425,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S4",
+    "model_id": "PROPOSED",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.9998720626036326,
+      "separation": 0.0010314838960766791,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S4",
+    "model_id": "PROPOSED",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.9999821980794271,
+      "separation": 0.003987695788964629,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S0",
+    "model_id": "B1",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.44976285646359127,
+      "separation": 7.247577284867172e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S0",
+    "model_id": "B1",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.2955168873071671,
+      "separation": 1.2041720992783667e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S0",
+    "model_id": "B1",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.31841559410095216,
+      "separation": 2.6866038474793185e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S0",
+    "model_id": "B2",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.0,
+      "separation": 2.9020095401695775e-06,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S0",
+    "model_id": "B2",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.0,
+      "separation": 1.002526607389124e-06,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S0",
+    "model_id": "B2",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.0,
+      "separation": 1.69704076048068e-06,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S0",
+    "model_id": "B3",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.0,
+      "separation": 5.629042490795655e-07,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S0",
+    "model_id": "B3",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.0,
+      "separation": 2.86455591336221e-07,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S0",
+    "model_id": "B3",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.0,
+      "separation": 1.0027650716892822e-06,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S0",
+    "model_id": "B4",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.008591156359761954,
+      "separation": 2.1040262929261642e-06,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S0",
+    "model_id": "B4",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.00013355858003099758,
+      "separation": 4.6793104454915614e-07,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S0",
+    "model_id": "B4",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.001748361197921137,
+      "separation": 1.0423154265026823e-06,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S0",
+    "model_id": "B5",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.9999550163745881,
+      "separation": 0.0007528781658038497,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S0",
+    "model_id": "B5",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.9998530824979146,
+      "separation": 0.0005129287911889454,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S0",
+    "model_id": "B5",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.9999477366606394,
+      "separation": 0.0005390684896459182,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S0",
+    "model_id": "PROPOSED",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.9999272445837657,
+      "separation": 0.0013417352611819902,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S0",
+    "model_id": "PROPOSED",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.999892936150233,
+      "separation": 0.001110565837007016,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P1",
+    "modality": "S0",
+    "model_id": "PROPOSED",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.9999854664007822,
+      "separation": 0.005355651971573631,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S1",
+    "model_id": "B1",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.19138791635632516,
+      "separation": 9.74287895208666e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S1",
+    "model_id": "B1",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.29778717160224916,
+      "separation": 1.3726001393858192e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S1",
+    "model_id": "B1",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.3464590837558111,
+      "separation": 3.6385143440990456e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S1",
+    "model_id": "B2",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.0021702127744598937,
+      "separation": 7.358315279285913e-06,
+      "confusion": [
+        [
+          6,
+          24
+        ],
+        [
+          6,
+          24
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S1",
+    "model_id": "B2",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.002284728056595971,
+      "separation": 1.5212746011646535e-06,
+      "confusion": [
+        [
+          27,
+          3
+        ],
+        [
+          27,
+          3
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S1",
+    "model_id": "B2",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.0047748146673256995,
+      "separation": 1.1447370722332077e-05,
+      "confusion": [
+        [
+          8,
+          22
+        ],
+        [
+          8,
+          22
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S1",
+    "model_id": "B3",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.00022839040611870586,
+      "separation": 1.209918732551311e-06,
+      "confusion": [
+        [
+          3,
+          27
+        ],
+        [
+          3,
+          27
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S1",
+    "model_id": "B3",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 48.333333333333336,
+      "ci_95": [
+        35.231293000212645,
+        61.605398266840304
+      ],
+      "cosine": 0.0,
+      "separation": 2.0072748980008251e-07,
+      "confusion": [
+        [
+          10,
+          20
+        ],
+        [
+          11,
+          19
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S1",
+    "model_id": "B3",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.0004749380042388414,
+      "separation": 5.419491958491562e-06,
+      "confusion": [
+        [
+          9,
+          21
+        ],
+        [
+          9,
+          21
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S1",
+    "model_id": "B4",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.00934113864786923,
+      "separation": 5.4628586629708785e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S1",
+    "model_id": "B4",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.0006234081151584784,
+      "separation": 1.1192918430917112e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S1",
+    "model_id": "B4",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.008447032379141699,
+      "separation": 1.3098623467537133e-05,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S1",
+    "model_id": "B5",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.999999725818634,
+      "separation": 0.00972601097698013,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S1",
+    "model_id": "B5",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.999984355767568,
+      "separation": 0.019557163988550504,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S1",
+    "model_id": "B5",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.9999710977077484,
+      "separation": 0.020558567779759566,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S1",
+    "model_id": "PROPOSED",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.9996459543704986,
+      "separation": 0.016613839442531267,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S1",
+    "model_id": "PROPOSED",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.9999574224154154,
+      "separation": 0.017199493075410525,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S1",
+    "model_id": "PROPOSED",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.999981031815211,
+      "separation": 0.19823227375745772,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S4",
+    "model_id": "B1",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.19138791635632516,
+      "separation": 9.74287895208666e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S4",
+    "model_id": "B1",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.29778717160224916,
+      "separation": 1.3726001393858192e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S4",
+    "model_id": "B1",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.3464590837558111,
+      "separation": 3.6385143440990456e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S4",
+    "model_id": "B2",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 48.333333333333336,
+      "ci_95": [
+        35.231293000212645,
+        61.605398266840304
+      ],
+      "cosine": -0.0042344451484192785,
+      "separation": 7.382021472797836e-06,
+      "confusion": [
+        [
+          5,
+          25
+        ],
+        [
+          6,
+          24
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S4",
+    "model_id": "B2",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 53.333333333333336,
+      "ci_95": [
+        39.996490258430256,
+        66.33008637495476
+      ],
+      "cosine": -0.0002959636156447232,
+      "separation": 1.4799003859404063e-06,
+      "confusion": [
+        [
+          25,
+          5
+        ],
+        [
+          23,
+          7
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S4",
+    "model_id": "B2",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.004623992373429549,
+      "separation": 1.1464532432607181e-05,
+      "confusion": [
+        [
+          8,
+          22
+        ],
+        [
+          8,
+          22
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S4",
+    "model_id": "B3",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -4.7397268159935874e-05,
+      "separation": 1.2087207148662552e-06,
+      "confusion": [
+        [
+          3,
+          27
+        ],
+        [
+          3,
+          27
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S4",
+    "model_id": "B3",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.0002513604238629341,
+      "separation": 2.1548638636422387e-07,
+      "confusion": [
+        [
+          14,
+          16
+        ],
+        [
+          14,
+          16
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S4",
+    "model_id": "B3",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.00037446098285727204,
+      "separation": 5.4178031632545755e-06,
+      "confusion": [
+        [
+          9,
+          21
+        ],
+        [
+          9,
+          21
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S4",
+    "model_id": "B4",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.0060937727529866,
+      "separation": 5.417563299185228e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S4",
+    "model_id": "B4",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.0028732187832550458,
+      "separation": 1.1249128656724376e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S4",
+    "model_id": "B4",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.00785236208078762,
+      "separation": 1.3104641535240565e-05,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S4",
+    "model_id": "B5",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.9999997158845265,
+      "separation": 0.009726009424775839,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S4",
+    "model_id": "B5",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.9999847372372945,
+      "separation": 0.019507677170137565,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S4",
+    "model_id": "B5",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.9999711553255717,
+      "separation": 0.020556628331542016,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S4",
+    "model_id": "PROPOSED",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.9996436317761739,
+      "separation": 0.01662557873254021,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S4",
+    "model_id": "PROPOSED",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.9999569733937581,
+      "separation": 0.017219623861213524,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S4",
+    "model_id": "PROPOSED",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.9999789377053578,
+      "separation": 0.1958239456017812,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S0",
+    "model_id": "B1",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.19138791635632516,
+      "separation": 9.74287895208666e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S0",
+    "model_id": "B1",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.29778717160224916,
+      "separation": 1.3726001393858192e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S0",
+    "model_id": "B1",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.3464590837558111,
+      "separation": 3.6385143440990456e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S0",
+    "model_id": "B2",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.0,
+      "separation": 3.131339248814887e-06,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S0",
+    "model_id": "B2",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.0,
+      "separation": 1.1097180286393874e-06,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S0",
+    "model_id": "B2",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.0,
+      "separation": 1.5709211136064975e-06,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S0",
+    "model_id": "B3",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.0,
+      "separation": 8.990003183365994e-07,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S0",
+    "model_id": "B3",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.0,
+      "separation": 2.070925879967452e-07,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S0",
+    "model_id": "B3",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.0,
+      "separation": 1.0168058769484864e-06,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          30,
+          0
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S0",
+    "model_id": "B4",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.008659932964170973,
+      "separation": 1.7627042865342446e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S0",
+    "model_id": "B4",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": 0.0024638233706355097,
+      "separation": 8.693578010365855e-07,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S0",
+    "model_id": "B4",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 50.0,
+      "ci_95": [
+        36.80620319424369,
+        63.1937968057563
+      ],
+      "cosine": -0.0029022327857092024,
+      "separation": 1.5985416872865698e-06,
+      "confusion": [
+        [
+          0,
+          30
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S0",
+    "model_id": "B5",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.9999998390674592,
+      "separation": 0.009739673634370168,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S0",
+    "model_id": "B5",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.9999865432580312,
+      "separation": 0.01955284650127093,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S0",
+    "model_id": "B5",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.9999671936035156,
+      "separation": 0.020827761416633925,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S0",
+    "model_id": "PROPOSED",
+    "seed": 42,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.9996585428714753,
+      "separation": 0.016721788762758174,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S0",
+    "model_id": "PROPOSED",
+    "seed": 101,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.9999437232812246,
+      "separation": 0.013353825360536576,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  },
+  {
+    "protocol": "P2",
+    "modality": "S0",
+    "model_id": "PROPOSED",
+    "seed": 2024,
+    "metrics": {
+      "accuracy_pct": 100.0,
+      "ci_95": [
+        94.0370507713833,
+        100.0
+      ],
+      "cosine": 0.9998690605163574,
+      "separation": 0.18801639477411905,
+      "confusion": [
+        [
+          30,
+          0
+        ],
+        [
+          0,
+          30
+        ]
+      ]
+    }
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "S0": {
+    "frozen_tau": 0.35,
+    "validation_support_f1": 0.2828282828282828
+  },
+  "S1": {
+    "frozen_tau": 0.45,
+    "validation_support_f1": 0.29268292682926833
+  },
+  "S2": {
+    "frozen_tau": 0.25,
+    "validation_support_f1": 0.2681564245810056
+  },
+  "S4": {
+    "frozen_tau": 0.25,
+    "validation_support_f1": 0.2909090909090909
+  }
+}

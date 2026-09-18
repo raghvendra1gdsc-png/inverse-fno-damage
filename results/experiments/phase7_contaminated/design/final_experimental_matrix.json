@@ -1,0 +1,100 @@
+{
+  "matrix_name": "Phase 7 Final Experimental Matrix",
+  "frozen_status": "FROZEN_POST_PATCH_7_0_3",
+  "patch_version": "7.0.3",
+  "earthquake_partitions": {
+    "total_records": 120,
+    "train_records": {"count": 70, "range": "RSN0001 to RSN0070"},
+    "val_records": {"count": 20, "range": "RSN0071 to RSN0090"},
+    "test_records": {"count": 30, "range": "RSN0091 to RSN0120"},
+    "disjointness_guarantee": "Train ∩ Val = Train ∩ Test = Val ∩ Test = ∅"
+  },
+  "training_protocols": {
+    "P1_Source_Only": {
+      "description": "Trained strictly on SOURCE_A to measure raw zero-shot inductive transfer without structural diversity",
+      "training_structures": ["SOURCE_A"],
+      "earthquake_range": "RSN0001 to RSN0070",
+      "standard_simulations": 70,
+      "bilateral_pairs": 20,
+      "total_simulations": 90
+    },
+    "P2_Multi_Structure": {
+      "description": "Multi-structure training: Reuses the exact 70 standard + 20 pair SOURCE_A simulations from P1 and adds 35 simulations per B_train structure across RSN0001..70",
+      "training_structures": ["SOURCE_A", "B_train_1", "B_train_2", "B_train_3", "B_train_4"],
+      "source_a_reuse": "Reuses exact 90 simulations from P1 (70 standard + 20 pairs)",
+      "b_train_allocations": {
+        "B_train_1": {"count": 35, "earthquakes": "RSN0001 to RSN0035"},
+        "B_train_2": {"count": 35, "earthquakes": "RSN0036 to RSN0070"},
+        "B_train_3": {"count": 35, "earthquakes": "RSN0001 to RSN0035"},
+        "B_train_4": {"count": 35, "earthquakes": "RSN0036 to RSN0070"}
+      },
+      "b_train_simulations": 140,
+      "total_p2_simulations": 230
+    }
+  },
+  "validation_accounting": {
+    "earthquake_range": "RSN0071 to RSN0090 (20 unique earthquakes)",
+    "structures": ["SOURCE_A", "B_train_1"],
+    "formula": "20 earthquakes × 2 structures = 40 standard simulations (+ 10 SOURCE_A pairs = 20 runs)",
+    "standard_simulations": {
+      "SOURCE_A": 20,
+      "B_train_1": 20
+    },
+    "bilateral_pairs": {
+      "SOURCE_A": 10
+    },
+    "total_validation_simulations": 60
+  },
+  "test_evaluation_hierarchy": {
+    "earthquakes": "RSN0091 to RSN0120 (30 strictly held-out earthquakes, N=30 independent samples per level)",
+    "Level_1_ID": {
+      "structure": "SOURCE_A",
+      "generalization_type": "Earthquake OOD (In-Distribution Structure)",
+      "num_independent_earthquakes": 30,
+      "bilateral_pairs": 15,
+      "total_evaluations": 30
+    },
+    "Level_2A_Interpolation": {
+      "structures": ["B_int_1", "B_int_2"],
+      "generalization_type": "Parametric Interpolation (Within Training Convex Hull)",
+      "num_independent_earthquakes": 30,
+      "allocation": "15 earthquakes on B_int_1 + 15 earthquakes on B_int_2",
+      "bilateral_pairs": 15,
+      "total_evaluations": 30
+    },
+    "Level_2B_Extrapolation": {
+      "structures": ["B_ext_soft", "B_ext_stiff"],
+      "generalization_type": "Parametric Extrapolation (Outside Training Hull)",
+      "num_independent_earthquakes": 30,
+      "allocation": "15 earthquakes on B_ext_soft + 15 earthquakes on B_ext_stiff",
+      "bilateral_pairs": 15,
+      "total_evaluations": 30
+    },
+    "Level_3_Topological": {
+      "structure": "C_4story",
+      "generalization_type": "Topological OOD (10 Nodes, 12 Elements)",
+      "num_independent_earthquakes": 30,
+      "bilateral_pairs": 15,
+      "total_evaluations": 30
+    }
+  },
+  "observability_gate_semantics": {
+    "gate_name": "G6",
+    "status": "PASS_PROTOCOL_FROZEN_TARGET_EXECUTION_PENDING",
+    "rule": "The observability protocol is frozen. During Phase 7.1, C_4story must undergo SVD and Fisher analysis before inverse model evaluation. If C_4story fails observability, classify as F1 physical non-observability and do not interpret inverse degradation as an ML failure."
+  },
+  "statistical_unit_policy": {
+    "fundamental_unit": "Earthquake/damage-state case (NOT random seed)",
+    "pseudoreplication_ban": "30 earthquakes × 3 seeds CANNOT be pooled into N=90 independent observations. Binary Clopper-Pearson CIs use N=30 independent earthquake cases for each seed/condition. Seed-to-seed variance is reported separately as mean ± SD."
+  },
+  "sensor_modalities": ["S0", "S1", "S4"],
+  "model_conditions": [
+    {"code": "B1", "name": "Flat Inverse FNO", "conditioning": "None"},
+    {"code": "B2", "name": "Unconditioned G-FNO", "conditioning": "None"},
+    {"code": "B3", "name": "Scalar Conditioned G-FNO", "conditioning": "Global mass & stiffness scalars"},
+    {"code": "B4", "name": "Geometry Conditioned G-FNO", "conditioning": "Nodal (x, y) & member lengths"},
+    {"code": "B5", "name": "Full Physics Conditioned G-FNO", "conditioning": "Local mechanical features (m_v, A_e, I_e, E_0)"},
+    {"code": "PROPOSED", "name": "Symmetry-Aware Physics G-FNO", "conditioning": "Full physics + latent symmetry + pairwise loss"}
+  ],
+  "random_seeds": [42, 101, 2024]
+}

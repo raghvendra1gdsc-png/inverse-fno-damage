@@ -1,0 +1,29 @@
+{
+  "original_metrics": {
+    "support_precision": 0.0,
+    "support_recall": 0.0,
+    "support_f1": 0.0,
+    "top1_localization_acc": 0.13636363636363635,
+    "top2_localization_acc": 0.22727272727272727,
+    "severity_mae_all": 0.1106436550617218,
+    "severity_mae_damaged": 0.17174144089221954,
+    "ghost_damage_mag": 0.10055162012577057,
+    "best_epoch": 15,
+    "best_val_loss": 0.8927659392356873
+  },
+  "reproduced_metrics": {
+    "support_precision": 0.0,
+    "support_recall": 0.0,
+    "support_f1": 0.0,
+    "top1_localization_acc": 0.13636363636363635,
+    "top2_localization_acc": 0.22727272727272727,
+    "severity_mae_all": 0.1106436550617218,
+    "severity_mae_damaged": 0.17174144089221954,
+    "ghost_damage_mag": 0.10055162012577057,
+    "best_epoch": 15,
+    "best_val_loss": 0.8927659392356873
+  },
+  "diff_top1": 0.0,
+  "diff_damaged_mae": 0.0,
+  "is_reproducible": true
+}
