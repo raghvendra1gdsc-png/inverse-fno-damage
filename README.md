@@ -22,6 +22,20 @@
 
 ---
 
+## Central Research Question
+
+This project investigates a fundamental question in physics-informed inverse modeling:
+
+> What structural information is physically observable from sparse seismic measurements, and how much of that information can a neural inverse model actually recover?
+
+The experiments distinguish three related but different concepts:
+
+- **Physical observability** — whether a measurement is sensitive to the underlying damage state.
+- **Identifiability** — whether different damage states can be distinguished from the available measurements.
+- **Neural recoverability** — whether a trained inverse model can actually exploit that information.
+
+---
+
 ## 📑 Faculty & Reviewer Reading Guide
 
 To review the research portfolio, technical evidence, personal statement, and prospective research proposals, please refer directly to the compiled academic documents below:
@@ -45,7 +59,7 @@ To review the research portfolio, technical evidence, personal statement, and pr
 **Raghvendra Singh Gahlot** is a 2nd-year undergraduate student in the Department of Civil Engineering at **MBM University, Jodhpur**.
 
 * **Candidate Objective:** Seeking a 6-month research internship / pre-doctoral visiting position under faculty mentorship in **Scientific Machine Learning (SciML)**, **Operator Learning**, and **Computational Mechanics / Inverse Dynamics**.
-* **Research Philosophy:** Deep learning architectures frequently report high reconstruction accuracies on over-instrumented synthetic benchmarks. However, I chose to formulate an inverse problem that is fundamentally ill-posed from structural mechanics first principles. I independently engineered this complete pipeline to probe the boundary between physical identifiability and algorithmic learnability:
+* **Research Philosophy:** Deep learning architectures frequently report high reconstruction accuracies on over-instrumented synthetic benchmarks. However, this project formulates an inverse problem that is fundamentally ill-posed from structural mechanics first principles. I independently engineered this complete pipeline to probe the boundary between physical identifiability and algorithmic learnability:
   1. Developed parametric transient dynamic finite-element models in **OpenSeesPy** under real PEER earthquake ground motions, enforcing strict SI units.
   2. Formulated noise-whitened sensitivity Jacobians and directional Fisher information to analytically map near-null spaces prior to network training.
   3. Engineered the **DualStreamGFNO** architecture in PyTorch, coupling 1D temporal Fourier Neural Operators with structural Graph Neural Networks and explicit symmetry decomposition.
@@ -57,22 +71,24 @@ To review the research portfolio, technical evidence, personal statement, and pr
 
 ## 🔬 Problem Formulation
 
-**Central Scientific Question:** What information about structural damage is physically observable from different sensing configurations, and what portion of that information can a neural inverse model actually recover?
+Structural damage identification from sparse dynamic response measurements constitutes a classical ill-posed inverse problem in computational elastodynamics. Rather than treating neural inversion as an unconstrained black-box regression, this project grounds the investigation in the governing equations of motion and systematically evaluates the limits of physical observability, identifiability, and neural recoverability.
 
 ### The Forward Problem
-The forward problem maps structural parameters and earthquake excitation to a dynamic response. We seek to model structural degradation following extreme seismic events as internal member stiffness reduction:
+The forward operator maps structural state parameters and earthquake ground motion excitation to dynamic response histories. We model localized structural degradation following extreme seismic events as internal member stiffness reductions:
 $$E_e(d_e) = (1 - d_e) E_0, \quad d_e \in [0, 0.5]$$
+where $d_e = 0$ represents the pristine undamaged state and $d_e = 0.5$ represents a 50% loss of elastic modulus in element $e$.
+
 The structural dynamic equilibrium of an $N$-degree-of-freedom frame under horizontal ground acceleration $a_g(t)$ is governed by the transient hyperbolic system:
 
 $$M \ddot{u}(t) + C \dot{u}(t) + K(d) u(t) = -M r a_g(t)$$
 
-where $M, C, K(d) \in \mathbb{R}^{n \times n}$ are mass, Rayleigh damping, and damage-parameterized tangent stiffness matrices. The resulting sparse sensor observations are modeled as $y(t) = \mathcal{H}_S[\ddot{u}(t) + r a_g(t), u(t)] + \eta(t)$, contaminated with calibrated 2% Gaussian noise $\eta(t) \sim \mathcal{N}(0, \sigma^2 I)$.
+where $M, C, K(d) \in \mathbb{R}^{n \times n}$ are mass, Rayleigh damping, and damage-parameterized tangent stiffness matrices, and $r$ is the ground motion influence vector. The resulting sparse sensor observations are modeled as $y(t) = \mathcal{H}_S[\ddot{u}(t) + r a_g(t), u(t)] + \eta(t)$, contaminated with calibrated 2% Gaussian measurement noise $\eta(t) \sim \mathcal{N}(0, \sigma^2 I)$.
 
 ### The Inverse Problem
-The inverse problem maps the sparse dynamic response back to the latent structural damage parameters:
-$$\text{Inverse Model: } \quad y(t) \rightarrow \hat{d}$$
+The inverse problem seeks to map the sparse dynamic response back to the latent structural damage parameters:
+$$\text{Inverse Operator: } \quad y(t) \rightarrow \hat{d}$$
 
-This inverse mapping is fundamentally **ambiguous and ill-posed** for symmetric civil structures. Because lateral sensing configurations often fail to break structural symmetry, bilateral damage pairs (e.g., stiffness reduction localized exclusively on the left vs. right ground-floor column) yield global horizontal floor acceleration histories that are virtually indistinguishable (<0.14% residual difference).
+This inverse mapping is fundamentally **ambiguous and ill-posed** for symmetric civil structures. Because lateral sensing configurations often fail to break structural symmetry, bilateral damage pairs (e.g., stiffness reduction localized exclusively on the left column $d_A$ vs. right column $d_B$ of the ground floor) yield global horizontal floor acceleration histories that are virtually indistinguishable (<0.14% residual difference).
 
 ```mermaid
                   STRUCTURAL INVERSE IDENTIFICATION PIPELINE
@@ -102,10 +118,10 @@ This inverse mapping is fundamentally **ambiguous and ill-posed** for symmetric 
                                └───────────────────────────┘
 ```
 
-This repository establishes an end-to-end computational framework combining OpenSeesPy non-linear dynamic simulations, noise-whitened Fisher observability theory, and Graph-Fourier Neural Operators (`DualStreamGFNO`) to systematically dissect:
-1. **Physical Observability:** Formally quantifying the theoretical identifiability of symmetric damage states under different sensor configurations.
-2. **Neural Recoverability:** Demonstrating that physical sensitivity (high Fisher information) alone did not guarantee reliable neural reconstruction, highlighting optimization and representation limitations.
-3. **Cross-Structure Generalization Boundaries:** Investigating how zero-shot topological extrapolation affects the estimation of damage magnitude versus directional/bilateral attribution.
+This repository establishes an end-to-end computational framework combining OpenSeesPy dynamic simulations, noise-whitened Fisher observability theory, and Graph-Fourier Neural Operators (`DualStreamGFNO`) to systematically dissect:
+1. **Physical Observability:** Formally quantifying the theoretical identifiability of symmetric damage states under different sensor configurations via noise-whitened Jacobians and singular value decomposition.
+2. **Neural Recoverability:** Evaluating whether neural inverse models can exploit physical information, demonstrating that under the tested architecture and optimization regime, physical sensitivity (high Fisher information) alone did not guarantee reliable neural reconstruction.
+3. **Cross-Structure Generalization Boundaries:** Investigating how zero-shot topological extrapolation affects the estimation of damage magnitude versus directional/bilateral attribution across multi-story frames.
 
 ---
 
@@ -125,7 +141,7 @@ Singular Value Decomposition (SVD) of the linearized sensitivity Jacobian $J = \
 
 $$|\langle v_E, v_{AB} \rangle| = 0.9982$$
 
-Under conventional horizontal floor accelerometers ($S0$), these bilateral failure modes reside inside an **empirical near-null space**. The dynamic response difference is orders of magnitude below ambient operational noise, rendering directional attribution physically impossible from these measurements alone.
+Under conventional horizontal floor accelerometers ($S0$), these bilateral failure modes reside inside an **empirical near-null space**. The dynamic response difference is orders of magnitude below ambient operational noise, rendering directional attribution physically unidentifiable from these measurements alone.
 
 <div align="center">
   <img src="reports/figures/observability/fig6_singular_spectra_comparison.png" width="70%" alt="Singular Spectra Comparison"/>
@@ -156,6 +172,15 @@ $$\sqrt{I_{AB}} = \|J_w v_{AB}\|_2 = \sqrt{v_{AB}^T \mathcal{F}_w v_{AB}}$$
 | **S2** | Horiz Accel + Column Axial Strains | 9 | $1344.18$ | $239.3\times$ | **High Fisher Information** (Rocking load transfer) |
 | **S1** | Horiz Accel + Vertical Joint Accelerations | 9 | $1829.63$ | $325.7\times$ | **Observable** (Joint rotational dynamics) |
 | **S4** | Multimodal Union: Horiz + Vert Accel + Column Strains | 15 | $2270.54$ | **$404.2\times$** | **Maximal Observability** |
+
+### Scientific Interpretation of Sensor Modality Sensitivity
+
+A central finding is that increasing physical sensitivity of a measurement did not necessarily translate into improved neural recovery. In the tested setting, some highly sensitive measurements remained difficult for the inverse model to exploit, indicating that physical information alone was insufficient under the tested representation, architecture, and optimization regime.
+
+The experimental analysis across the sensor modality hierarchy reveals distinct physical mechanisms:
+- **Baseline Non-Observability ($S0$):** Directional Fisher sensitivity is minimal ($\sqrt{I_{AB}} = 5.617$). The bilateral difference vector resides almost entirely in the numerical near-null space ($|\langle v_E, v_{AB} \rangle| = 0.9982$), causing lateral floor acceleration waveforms to differ by $<0.14\%$. Bilateral damage is physically non-identifiable from horizontal floor sensors alone.
+- **Physical Sensitivity vs. Neural Recoverability Gap ($S2$):** Overturning rocking load transfer through columns provides massive physical sensitivity ($\sqrt{I_{AB}} = 1344.18$, an approximately $239.3\times$ amplification over $S0$). Analytically, the bilateral asymmetry is cleanly observable. However, in downstream neural experiments, this physical information could not be exploited under standard gradient descent (yielding 50.0% attribution, chance level), demonstrating that high Fisher information alone did not guarantee neural recoverability.
+- **Observable Joint Dynamics ($S1$ and $S4$):** Vertical joint accelerations ($S1$, $\sqrt{I_{AB}} = 1829.63$, $325.7\times$) and the multimodal union ($S4$, $\sqrt{I_{AB}} = 2270.54$, $404.2\times$) capture asymmetric joint rotations and framing dynamics at dynamic amplitudes comparable to horizontal accelerations. Under the tested configuration, these sensor configurations enabled the neural inverse model to overcome bilateral ambiguity, achieving 80.0% ($S1$) and 90.0% ($S4$) attribution accuracy in single-structure evaluations.
 
 ---
 
@@ -212,10 +237,10 @@ flowchart TD
 
 ---
 
-## 🏆 Physical Identifiability vs. Neural Recoverability: Three Core Findings
+## 🔬 Physical Identifiability vs. Neural Recoverability: Three Core Findings
 
 ### 1. Physical Observability Limits Determine Baseline Model Performance
-Under conventional horizontal floor accelerometers ($S0$), the physical inability to resolve bilateral damage governs the neural model's performance limit. On a held-out test set of $N=30$ independent bilateral evaluations, the inverse model trained on $S0$ achieves **exactly 50.0% attribution accuracy (15/30, $p = 1.000$)**, precisely matching the theoretical limit of an unbiased coin flip. Multimodal sensing ($S4$) resolves this ambiguity physically, allowing the neural model to successfully reconstruct the source location, reaching **90.0% accuracy ($27/30$, $p = 9.0 \times 10^{-6}$)** under the tested configuration.
+Under conventional horizontal floor accelerometers ($S0$), the physical inability to resolve bilateral damage governs the neural model's performance limit. On a held-out test set of $N=30$ independent bilateral evaluations, the inverse model trained on $S0$ achieves **exactly 50.0% attribution accuracy (15/30, $p = 1.000$)**, precisely matching the theoretical limit of an unbiased coin flip. Multimodal sensing ($S4$) mitigates this physical ambiguity by providing observable vertical joint rotations and column strains, allowing the neural model to recover the source location with **90.0% accuracy ($27/30$, $p = 9.0 \times 10^{-6}$)** under the tested single-structure configuration.
 
 <div align="center">
   <img src="reports/figures/phase6_2/fig1_bilateral_confusion.png" width="75%" alt="Bilateral Confusion Matrices"/>
@@ -224,8 +249,11 @@ Under conventional horizontal floor accelerometers ($S0$), the physical inabilit
 
 ---
 
-### 2. PHYSICAL SENSITIVITY ALONE DID NOT GUARANTEE NEURAL LEARNABILITY
-Column axial strain ($S2$) provides massive physical Fisher sensitivity ($\sqrt{I_{AB}} = 1344.18$, a $239\times$ amplification over $S0$). From a strictly analytical standpoint, this configuration is fully identifiable. However, standard end-to-end training of `DualStreamGFNO` on $S2$ fails to recover the damage location, achieving only **50.0% attribution accuracy ($15/30$, $p = 1.000$)**. 
+### 2. Under Tested Conditions, Physical Sensitivity Alone Did Not Guarantee Neural Learnability
+
+A central finding is that increasing physical sensitivity of a measurement did not necessarily translate into improved neural recovery. In the tested setting, some highly sensitive measurements remained difficult for the inverse model to exploit, indicating that physical information alone was insufficient under the tested representation, architecture, and optimization regime.
+
+Column axial strain ($S2$) provides substantial physical Fisher sensitivity ($\sqrt{I_{AB}} = 1344.18$, an approximately $239.3\times$ amplification over $S0$). From a strictly analytical standpoint, this configuration is fully identifiable. However, standard end-to-end training of `DualStreamGFNO` on $S2$ failed to recover the damage location, achieving only **50.0% attribution accuracy ($15/30$, $p = 1.000$)**—identical to chance.
 
 The experiments demonstrate that physical observability alone did not guarantee neural learnability under the tested architecture and optimization regime.
 
@@ -234,13 +262,13 @@ The experiments demonstrate that physical observability alone did not guarantee 
   <p><em>Figure 5: Physical Observability vs. Empirical Learnability. High Fisher information (S2) fails under standard gradient descent, demonstrating that physical observability alone did not guarantee neural learnability under the tested conditions.</em></p>
 </div>
 
-**Root Mechanism (Multiscale Gradient Masking):**  
+**Mechanistic Cause (Multiscale Gradient Masking):**  
 In the tested setting, increasing the physical sensitivity of a measurement did not necessarily translate into improved neural recovery. Some highly sensitive measurements remained difficult for the inverse model to exploit, indicating that physical information alone was insufficient under the tested representation, architecture, and optimization regime. Specifically, high-magnitude floor accelerations ($\sim 1.0 \text{ m/s}^2$) dominate $>98\%$ of the early backpropagation gradient norm, suppressing gradients originating from micro-strain measurements ($\sim 10^{-5} \text{ m/m}$). Despite containing the physical signal necessary to break lateral symmetry, micro-strains are numerically drowned out during gradient descent, rendering the identifiable parameters practically unrecoverable under the evaluated configuration.
 
 ---
 
 ### 3. Cross-Structure Extrapolation Induces Direction–Magnitude Decoupling
-To test whether learned inverse models rely on memorizing structural topologies, we evaluated the model across 530 OpenSees dynamic simulations encompassing 10 structural configurations and an entirely unseen 4-story frame (extrapolation/OOD). Under these conditions, an unexpected mathematical phenomenon emerges: **Direction–Magnitude Decoupling**.
+To evaluate whether learned inverse models rely on memorizing structural topologies, we tested the model across 530 OpenSees dynamic simulations encompassing 10 structural configurations and an entirely unseen 4-story frame (extrapolation/OOD). Under these conditions, an unexpected mathematical phenomenon was observed: **Direction–Magnitude Decoupling**.
 
 <div align="center">
   <img src="reports/figures/phase7/fig1_cross_structure_benchmark.png" width="75%" alt="Cross-Structure Benchmark"/>
@@ -255,7 +283,7 @@ To test whether learned inverse models rely on memorizing structural topologies,
 
 * **Directional Alignment Transfers (Attribution):** The network successfully recovers the true physical direction of bilateral damage asymmetry zero-shot, achieving directional cosine alignments of $\cos \theta \approx +0.80$ to $+0.85$ (peaking at $+0.996$).
 * **Magnitude Estimation Collapses:** While the direction is correct, the predicted damage separation vector magnitude $\|\hat{d}_A - \hat{d}_B\|_2$ collapses by four orders of magnitude ($\sim 10^{-5}$ compared to ground truth $0.4243$).
-* **Optimization Limit:** Scaling training compute by $8.3\times$ (from 12 to 100 epochs across 72 controlled models) sharpens the directional alignment but completely fails to restore finite magnitude separation. This demonstrates a representational failure in scaling magnitude across out-of-distribution graph topologies, even when the directional symmetry features are successfully learned and transferred.
+* **Optimization Limit (Compute Scaling Does Not Resolve Magnitude Collapse):** Scaling training compute by $8.3\times$ (from 12 to 100 epochs across 72 controlled models) sharpens the directional alignment but completely fails to restore finite magnitude separation. The results indicate that training longer did not automatically solve the magnitude problem under the tested conditions. This highlights a fundamental representational and optimization challenge in scaling damage magnitude across out-of-distribution graph topologies, even when directional symmetry features are successfully learned and transferred.
 
 ---
 
@@ -265,7 +293,7 @@ To test whether learned inverse models rely on memorizing structural topologies,
 All evaluations conducted on strictly held-out bilateral test pairs with frozen decision thresholds:
 
 | Modality Suite | Active Channels | Fisher Sensitivity $\sqrt{I_{AB}}$ | Discrete Attribution | Exact Binomial $p$-value | 95% Clopper-Pearson CI | Directional Cosine | Predicted Separation $\|\Delta \hat{d}\|_2$ | True Separation Ratio |
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | **S0 (Horiz Accel)** | 3 | $5.617$ | 50.0% (15/30) | $p = 1.000$ | $[31.3\%, 68.7\%]$ | $-0.1151 \pm 0.122$ | $9.04 \times 10^{-6}$ | $0.002\%$ |
 | **S2 (Horiz + Strain)** | 9 | $1344.18$ | 50.0% (15/30) | $p = 1.000$ | $[31.3\%, 68.7\%]$ | $+0.1047 \pm 0.111$ | $0.000328$ | $0.08\%$ *(Learnability Gap)* |
 | **S1 (Horiz + Vert)** | 9 | $1829.63$ | 80.0% (24/30) | $p = 0.0014$ | $[61.4\%, 92.3\%]$ | $+0.7272 \pm 0.442$ | $0.1576$ | $37.15\%$ |
@@ -378,10 +406,12 @@ python scripts/gstack.py ship
 
 This project adheres to strict standards of scientific honesty:
 
-1. **No Cherry-Picked Metrics:** Both positive results (e.g., 90.0% attribution under multimodal sensing $S4$) and negative results (e.g., 50.0% chance performance under horizontal sensing $S0$ and column strain $S2$) are reported transparently.
-2. **Honest Reporting of Generalization Limits:** We explicitly document that zero-shot cross-structure transfer preserves directional orientation ($\cos \approx +0.85$) while suffering finite separation collapse ($\sim 10^{-5}$ vs. $0.4243$), intentionally avoiding the use of directional cosine as a misleading proxy for perfect reconstruction.
-3. **No Contaminated Benchmarks:** All test evaluations are performed on frozen, held-out bilateral pairs with strictly isolated normalization statistics.
-4. **Physical Unit Rigor:** All OpenSees simulations enforce strict SI units ($m, N, kg, s, Pa$).
+1. **Physical Sensitivity Can Exist Without Neural Recovery:** We explicitly document that high physical Fisher sensitivity (such as in modality $S2$, which exhibits a $239.3\times$ sensitivity increase over $S0$) fails to yield successful damage attribution under standard gradient descent due to multiscale gradient masking, reporting the 50.0% chance performance transparently.
+2. **Symmetry Induces Fundamental Ambiguities:** We demonstrate that horizontal floor acceleration measurements ($S0$) lie in an empirical near-null space ($|\langle v_E, v_{AB} \rangle| = 0.9982$), explaining why lateral sensing alone cannot resolve bilateral damage without multimodal augmentation.
+3. **Training Longer Did Not Solve Magnitude Collapse:** In cross-structure topological extrapolation, scaling training compute by $8.3\times$ (from 12 to 100 epochs across 72 controlled models) improved directional alignment ($\cos \theta \approx +0.85$, peaking at $+0.996$) but failed to restore finite damage separation ($\sim 10^{-5}$ vs. ground truth $0.4243$). We intentionally avoid using directional cosine as a misleading proxy for complete structural inversion.
+4. **Scope-Bounded Empirical Claims:** All findings are strictly bounded by the evaluated structural configurations, finite element dynamic simulations, and operator architectures, without claiming universal applicability across arbitrary inverse problems.
+5. **No Cherry-Picked Metrics:** Both positive results (e.g., 90.0% attribution under multimodal sensing $S4$) and negative failure modes are reported with exact binomial $p$-values and 95% Clopper-Pearson confidence intervals.
+6. **Physical Unit Rigor:** All OpenSees dynamic simulations enforce strict SI units ($m, N, kg, s, Pa$).
 
 ---
 
